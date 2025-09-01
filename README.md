@@ -4,7 +4,12 @@ Official documentation:
 https://docs.n8n.io/
 
 ## Getting Started
-* Copy and fill the `template.env`. Rename it to `local.env` to provide environment variables (see: `<TODO>`)
+* Copy and fill the `template.env`. Rename it to `local.env` to provide environment variables (see: `<TODO>`).
+Passwords for n8n can be generated securely via
+  ```bash
+  openssl rand -base64 32
+  ```
+
 * Run n8n-docker-compose.yml to start up the n8n self-hosted service:
      ```shell
      podman-compose -f docker-compose.yml up -d
