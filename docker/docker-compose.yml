@@ -1,8 +1,9 @@
-version: '3.8'
-
 volumes:
   db_storage:
   n8n_storage:
+  redis_storage:
+  qdrant_storage:
+  mqtt_storage:
 
 services:
   postgres:
@@ -19,6 +20,64 @@ services:
       timeout: 5s
       retries: 10
 
+  redis:
+    image: redis/redis-stack:latest
+    restart: always
+    env_file:
+      - local.env
+    ports:
+      - "6379:6379"     
+      - "8001:8001"     
+    volumes:
+      - redis_storage:/data
+    environment:
+      - REDIS_ARGS=--save 60 1000
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    restart: always
+    env_file:
+      - local.env
+    ports:
+      - "6333:6333"     
+      - "6334:6334"     
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    environment:
+      - QDRANT__SERVICE__HTTP_PORT=6333
+      - QDRANT__SERVICE__GRPC_PORT=6334
+
+  mqtt:
+    image: eclipse-mosquitto:2.0.18
+    restart: always
+    env_file:
+      - local.env
+    ports:
+      - "1883:1883"   
+      - "9001:9001"   
+    volumes:
+      - mqtt_storage:/mosquitto/data
+    command: >
+      sh -c "
+      echo 'listener 1883' > /mosquitto/config/mosquitto.conf &&
+      echo 'listener 9001' >> /mosquitto/config/mosquitto.conf &&
+      echo 'protocol websockets' >> /mosquitto/config/mosquitto.conf &&
+      echo 'allow_anonymous true' >> /mosquitto/config/mosquitto.conf &&
+      echo 'persistence true' >> /mosquitto/config/mosquitto.conf &&
+      echo 'persistence_location /mosquitto/data/' >> /mosquitto/config/mosquitto.conf &&
+      mosquitto -c /mosquitto/config/mosquitto.conf
+      "
+    healthcheck:
+      test: ["CMD", "mosquitto_pub", "-h", "localhost", "-t", "health", "-m", "check"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
   n8n:
     image: docker.n8n.io/n8nio/n8n
     restart: always
@@ -26,10 +85,14 @@ services:
       - local.env
     ports:
       - "5678:5678"
-    links:
-      - postgres
     volumes:
       - n8n_storage:/home/node/.n8n
     depends_on:
       postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+      mqtt:
         condition: service_healthy
