@@ -1,0 +1,627 @@
+{
+  "name": "Save Project Facts",
+  "nodes": [
+    {
+      "parameters": {
+        "chunkSize": 200,
+        "chunkOverlap": 30,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        656,
+        640
+      ],
+      "id": "89e183ef-86bf-4e2e-9704-850c0a7a65ea",
+      "name": "Recursive Character Text Splitter"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "azure/gpt-4.1-nano",
+          "mode": "list",
+          "cachedResultName": "azure/gpt-4.1-nano"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -512,
+        448
+      ],
+      "id": "c6096efc-7946-4ee7-8ad5-f2f3cdd8adda",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "5G18H8IWRnUwHR7B",
+          "name": "IteraGPT"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "iteratec/bge-m3",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        464,
+        448
+      ],
+      "id": "b47b2a4c-6b6d-4076-8d34-37a76d1ffc3d",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "5G18H8IWRnUwHR7B",
+          "name": "IteraGPT"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "textSplittingMode": "custom",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "project_id",
+                "value": "={{ $json.output.id }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        656,
+        448
+      ],
+      "id": "6d1fd527-778b-4962-99c7-a176a88e6ddd",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -2032,
+        448
+      ],
+      "id": "fd672466-6a9e-4fb0-bbc6-22150f26d2d5",
+      "name": "NoOp1"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n  \"$id\": \"https://example.com/project-factsheet.schema.json\",\n  \"title\": \"Project Factsheet Schema\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"id\": {\n      \"type\": \"string\",\n      \"description\": \"ID des Projekts\"\n    },\n    \"projectName\": {\n      \"type\": \"string\",\n      \"description\": \"Name des Projekts\"\n    },\n    \"challenges\": {\n      \"type\": \"array\",\n      \"description\": \"Liste mit den größten Herausforderungen oder Problemen\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    },\n    \"solutionApproach\": {\n      \"type\": \"object\",\n      \"description\": \"Zusammenfassung der Lösungswege und eingesetzten Technologien\",\n      \"properties\": {\n        \"methods\": {\n          \"type\": \"string\",\n          \"description\": \"Kurzbeschreibung verwendeter Projektmethoden (z.B. agil)\"\n        },\n        \"technologiesUsed\": {\n          \"type\": \"array\",\n          \"description\": \"Auflistung verwendeter Technologien, Frameworks, etc.\",\n          \"items\": {\n            \"type\": \"string\"\n          }\n        },\n        \"implementationDetails\": {\n          \"type\": \"string\",\n          \"description\": \"Weitere Details zur technischen Realisierung (z.B. Architektur)\"\n        }\n      },\n      \"required\": [\n        \"methods\",\n        \"technologiesUsed\",\n        \"implementationDetails\"\n      ]\n    },\n    \"results\": {\n      \"type\": \"object\",\n      \"description\": \"Erzielte Ergebnisse und Kennzahlen des Projekts\",\n      \"properties\": {\n        \"timeSavingsPerWeek\": {\n          \"type\": \"string\",\n          \"description\": \"Beschreibt wöchentliche Zeitersparnis (z.B. '2 Std. pro Mitarbeiter')\"\n        },\n        \"costReduction\": {\n          \"type\": \"string\",\n          \"description\": \"Ersparnis an Kosten (z.B. '250.000 € pro Jahr')\"\n        },\n        \"numberOfUsers\": {\n          \"type\": \"number\",\n          \"description\": \"Anzahl der aktiven Anwender\"\n        },\n        \"keyMetrics\": {\n          \"type\": \"array\",\n          \"description\": \"Sonstige wichtige Kennzahlen (z.B. Performance, ROI)\",\n          \"items\": {\n            \"type\": \"string\"\n          }\n        }\n      },\n      \"required\": [\n        \"timeSavingsPerWeek\",\n        \"costReduction\",\n        \"numberOfUsers\",\n        \"keyMetrics\"\n      ]\n    },\n    \"anecdotes\": {\n      \"type\": \"array\",\n      \"description\": \"Besondere Anekdoten oder Geschichten aus dem Projekt\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    },\n    \"nextSteps\": {\n      \"type\": \"string\",\n      \"description\": \"Geplante Weiterentwicklung oder Rollout\"\n    },\n    \"titleSuggestions\": {\n      \"type\": \"array\",\n      \"description\": \"Mögliche Titelvorschläge für die Projektreferenz\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    }\n  },\n  \"required\": [\n    \"id\",\n    \"projectName\",\n    \"challenges\",\n    \"solutionApproach\",\n    \"results\",\n    \"anecdotes\",\n    \"nextSteps\",\n    \"titleSuggestions\"\n  ]\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -176,
+        480
+      ],
+      "id": "92eae27b-8639-41ad-8c1b-b052d4562025",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "facts",
+        "key": "={{ $json.projectId }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1216,
+        528
+      ],
+      "id": "6d7a42ff-1818-4481-8b9c-f76217b085c9",
+      "name": "Redis1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "redis": {
+          "id": "JYjnb0S7oQH2Ho5m",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -592,
+        272
+      ],
+      "id": "e0d5b35c-20ef-4683-8e6e-90e865b49221",
+      "name": "Merge2"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "history",
+        "key": "={{ $json.sessionId }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1200,
+        256
+      ],
+      "id": "4880db86-3bb8-4d91-9b69-0dc1dc0a18ae",
+      "name": "Gesprächsverlauf",
+      "credentials": {
+        "redis": {
+          "id": "JYjnb0S7oQH2Ho5m",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "interviews",
+          "mode": "list",
+          "cachedResultName": "interviews"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        464,
+        176
+      ],
+      "id": "22b34c12-7f5c-4fba-b514-57f9314a785a",
+      "name": "Qdrant Vector Store",
+      "credentials": {
+        "qdrantApi": {
+          "id": "jiVoJ7MxWLoH6PkA",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Extrahiere die bisher gesammelten Informationen und erstelle Ein Fact-Sheet.\n\nProject ID: {{ $json.projectId }}\n\nGesprächsverlauf:\n\n {{ $json.history }}\n\nBisheriges Factsheet:\n\n{{ $json.facts || \"leer\" }}}}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "Du bist ein Agent, der aus einem vorliegenden Interview (oder Gesprächsverlauf) ein kompaktes JSON-Faktensheet zu einem Projekt erstellen soll. Dein Ziel ist, die inhaltlichen Aussagen möglichst knapp, präzise und faktengetreu zu erfassen. Token-Effizienz ist sehr wichtig, also beschränke dich auf das Wesentliche.\n\nVerwende ausschließlich die Informationen aus der Gesprächshistorie, lasse Einträge leer, zu denen du keine Informationen hast. \n\nIMPORTANT: Erfinde keine Fakten!\n\nZIELE UND EINSCHRÄNKUNGEN\n\n    Du fügst ausschließlich Informationen ein, die nachweislich aus dem Interview stammen (keine Erfindungen).\n    Zusammenfassungen sind erlaubt, sofern sie korrekt sind.\n    Deine Ausgabe erfolgt in gültigem JSON.\n    Vermeide Redundanzen und lange Textpassagen.\n\nVORGEHEN\n\n    Lies das Interviewmaterial und extrahiere relevante Informationen (Projektname, Herausforderungen, Lösung, Technologien, Ergebnisse, Anekdoten, nächste Schritte…).\n    Füge diese möglichst kurz und klar in ein JSON-Faktensheet ein, mit sinnvoll benannten Feldern.\n    Achte auf Gültigkeit des JSON-Formats; kein zusätzlicher Text oder Markdown.\n\nDein JSON-Output soll immer genau folgendem Schema entsprechen (einschließlich der Feldnamen, Reihenfolge und Datenformate). Du darfst Felder leer lassen oder optional füllen, falls keine Daten verfügbar sind. Erfinde keine Informationen, beschränke dich auf belegbare Fakten. Verwende kurze, präzise Formulierungen, um Token zu sparen.\n\nErzeuge eine Projekt ID, sofern wir noch keine haben.\n\nSchema (bitte genauso einhalten):\n\njson\n\n{\n  \"id\": \"UUID\",\n  \"projectName\": \"String\",\n  \"challenges\": [\n    \"String\",\n    \"String, ...\"\n  ],\n  \"solutionApproach\": {\n    \"methods\": \"String\",          // kurz beschreiben, z.B. agile Vorgehensweise\n    \"technologiesUsed\": [\n      \"String\",\n      \"String, ...\"\n    ],\n    \"implementationDetails\": \"String\" // ggf. Architekturbeschreibung, kurze Zusammenfassung\n  },\n  \"results\": {\n    \"timeSavingsPerWeek\": \"String\",   // z.B. \"2 Stunden/Mitarbeiter\"\n    \"costReduction\": \"String\",       // z.B. \"250k € pro Jahr\"\n    \"numberOfUsers\": \"Number\",       // z.B. 400\n    \"keyMetrics\": [\n      \"String\",\n      \"String, ...\"                  // z.B. Performance, Ladezeiten, ROI etc.\n    ]\n  },\n  \"anecdotes\": [\n    \"String\",\n    \"String, ...\"\n  ],\n  \"nextSteps\": \"String\",             // z.B. geplanter Rollout\n  \"titleSuggestions\": [\n    \"String\",\n    \"String, ...\"\n  ]\n}\n\nBeispiel (zur Veranschaulichung):\n\njson\n\n{\n  \"projectName\": \"Baustellenportal SWM\",\n  \"challenges\": [\n    \"Hoher Koordinationsaufwand\",\n    \"Datenchaos bei parallelen Baumaßnahmen\"\n  ],\n  \"solutionApproach\": {\n    \"methods\": \"Agiles Projektmanagement mit Scrum\",\n    \"technologiesUsed\": [\n      \"Node.js\",\n      \"React\",\n      \"PostgreSQL\"\n    ],\n    \"implementationDetails\": \"Zentrales Portal für sämtliche Baustellendaten, regelmäßige Sprints, CI/CD-Pipeline\"\n  },\n  \"results\": {\n    \"timeSavingsPerWeek\": \"2 Stunden pro Mitarbeiter\",\n    \"costReduction\": \"250.000 € pro Jahr\",\n    \"numberOfUsers\": 400,\n    \"keyMetrics\": [\n      \"Performant bei 500 Requests/Minute\",\n      \"ROI nach 6 Monaten erreicht\"\n    ]\n  },\n  \"anecdotes\": [\n    \"Straße musste nur einmal statt dreimal aufgerissen werden\",\n    \"Anwohner sind begeistert von geringeren Verkehrsbehinderungen\"\n  ],\n  \"nextSteps\": \"Rollout auf weitere Städte geplant\",\n  \"titleSuggestions\": [\n    \"Smartes Baustellenportal 2.0\",\n    \"Koordinationswunder für Großstädte\"\n  ]\n}\n\nZiel:\n• Du erzeugst bei Bedarf immer genau dieses JSON-Format. Keine weiteren Textausgaben oder Markdown verwenden.\n\n• Halte deine Einträge so kurz wie möglich, aber so aussagekräftig wie nötig."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -352,
+        176
+      ],
+      "id": "b558fc97-b237-4869-a8fb-ee9ab9ffe9b7",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "mode": "chooseBranch"
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        320,
+        176
+      ],
+      "id": "bac90b20-6a08-452e-a8b1-65493c0f42a5",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "sessionId"
+            }
+          ]
+        }
+      },
+      "id": "d236667b-b039-4223-a5c5-40416709779f",
+      "typeVersion": 1.1,
+      "name": "Start",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        -2240,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ $json.output.id }}",
+        "value": "={{ JSON.stringify($json) }}",
+        "expire": true,
+        "ttl": "={{ 90 * 86400 }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -16,
+        176
+      ],
+      "id": "b9d05509-d295-40e9-8b74-009255a385d3",
+      "name": "store factsheet",
+      "credentials": {
+        "redis": {
+          "id": "JYjnb0S7oQH2Ho5m",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "projectId",
+        "key": "=interview:context:{{ $json.sessionId }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1824,
+        448
+      ],
+      "id": "ec016bef-f8d2-4056-ba7e-8bf3bb1a6845",
+      "name": "Redis",
+      "credentials": {
+        "redis": {
+          "id": "JYjnb0S7oQH2Ho5m",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2fad0a16-cea6-4234-af46-138bbc0732fc",
+              "leftValue": "={{ $json.projectId }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1616,
+        448
+      ],
+      "id": "806fbf14-c5e3-4dba-a588-53a55c91abec",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "action": "generate",
+        "dataPropertyName": "projectId"
+      },
+      "type": "n8n-nodes-base.crypto",
+      "typeVersion": 1,
+      "position": [
+        -1200,
+        672
+      ],
+      "id": "e6f883fa-1450-4e8a-a2f6-e00709282a2d",
+      "name": "Crypto1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -1024,
+        416
+      ],
+      "id": "453739cc-b00b-4d20-be0a-02d38111ebeb",
+      "name": "Merge"
+    }
+  ],
+  "pinData": {
+    "Start": [
+      {
+        "json": {
+          "sessionId": "c4f730f23dc14b70a7cb0b4a91f1000d"
+        }
+      }
+    ],
+    "Redis": [
+      {
+        "json": {
+          "name": "First item",
+          "code": 1
+        }
+      },
+      {
+        "json": {
+          "name": "Second item",
+          "code": 2
+        }
+      }
+    ],
+    "Gesprächsverlauf": [
+      {
+        "json": {
+          "name": "First item",
+          "code": 1
+        }
+      },
+      {
+        "json": {
+          "name": "Second item",
+          "code": 2
+        }
+      }
+    ],
+    "Redis1": [
+      {
+        "json": {
+          "name": "First item",
+          "code": 1
+        }
+      },
+      {
+        "json": {
+          "name": "Second item",
+          "code": 2
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "store factsheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gesprächsverlauf": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NoOp1": {
+      "main": [
+        [
+          {
+            "node": "Gesprächsverlauf",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Redis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "NoOp1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "store factsheet": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Redis1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Crypto1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Crypto1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "461c2d5f-316c-4fe9-b618-f43685ca5bd2",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b81cb0b3bf8069b0d16cf6894dc892ec2f8d9fec00803e5c7e21c0a3d400d5a7"
+  },
+  "id": "bYzjiyfyQGo9oq7N",
+  "tags": []
+}
