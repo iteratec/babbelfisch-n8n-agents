@@ -180,64 +180,6 @@
     },
     {
       "parameters": {
-        "model": {
-          "__rl": true,
-          "value": "azure/gpt-4.1",
-          "mode": "list",
-          "cachedResultName": "azure/gpt-4.1"
-        },
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
-      "typeVersion": 1.2,
-      "position": [
-        2160,
-        336
-      ],
-      "id": "c973e0f7-9dcc-4f3e-a673-731becf69037",
-      "name": "OpenAI Chat Model1",
-      "credentials": {
-        "openAiApi": {
-          "id": "5G18H8IWRnUwHR7B",
-          "name": "IteraGPT"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "e9e47100-1778-405b-b990-dc567cdd7371",
-              "leftValue": "={{ $json.output.score }}",
-              "rightValue": 82,
-              "operator": {
-                "type": "number",
-                "operation": "gte"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        2512,
-        64
-      ],
-      "id": "2df2aaaf-1732-4530-b6ea-faa557fa0dcc",
-      "name": "If1"
-    },
-    {
-      "parameters": {
         "assignments": {
           "assignments": [
             {
@@ -319,68 +261,6 @@
       ],
       "id": "12ff3ef9-373e-424a-a31a-446a13ae4c26",
       "name": "Set sessionId"
-    },
-    {
-      "parameters": {
-        "jsonSchemaExample": "{\n  \"score\": 99,\n  \"reason\": \"Begründung mit konkreten Kritikpunkten und Verbesserungsvorschlängen\"\n}",
-        "autoFix": true
-      },
-      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
-      "typeVersion": 1.3,
-      "position": [
-        2288,
-        304
-      ],
-      "id": "b2b225ee-578a-455a-9f61-d37e847c4308",
-      "name": "Structured Output Parser"
-    },
-    {
-      "parameters": {
-        "model": {
-          "__rl": true,
-          "value": "azure/gpt-4.1-nano",
-          "mode": "list",
-          "cachedResultName": "azure/gpt-4.1-nano"
-        },
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
-      "typeVersion": 1.2,
-      "position": [
-        2320,
-        448
-      ],
-      "id": "63be6d18-8aa8-4966-9c9e-0e2bfc850bd0",
-      "name": "OpenAI Chat Model2",
-      "credentials": {
-        "openAiApi": {
-          "id": "5G18H8IWRnUwHR7B",
-          "name": "IteraGPT"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "={{ $json.output }}",
-        "hasOutputParser": true,
-        "messages": {
-          "messageValues": [
-            {
-              "message": "Du bist Experte für gut lesbare Texte und kennst du Regeln von Wolf Schneider. Hier die Wichtigsten Regeln:  ## Do's (Was tun?)  - **Kurze Sätze bevorzugen**: Maximal 12 Wörter pro Satz, klare Gliederung. - **Aktive Verben verwenden**: Aktiv statt passiv, starke Verben statt Substantivierungen. - **Konkrete, anschauliche Sprache**: Abstrakte Begriffe vermeiden, Beispiele und bildhafte Wörter nutzen. - **Klarheit und Einfachheit**: So schreiben, dass jede:r es versteht. - **Redundanzen und Füllwörter streichen**: Überflüssiges weglassen, auf das Wesentliche konzentrieren. - **Leserorientiert schreiben**: Immer den Lesenden im Blick haben und verständlich erklären. - **Einfache, kurze Wörter bevorzugen**: Einsilbige oder zweisilbige Wörter sind einprägsamer. - **Inklusive Sprache verwenden**: Geschlechtergerechte Formulierungen nutzen. Nur falls nötig die Doppelpunktschreibweise verwenden (z.B. \"Lehrer:innen\").  ## Don'ts (Was vermeiden?)  - **Keine Schachtelsätze**: Lange, verschachtelte Sätze machen den Text unverständlich. - **Keine unnötigen Adjektive und Füllwörter**: Nur sparsam und gezielt nutzen. Besonders werbliche Adjektive vermeiden (z.B. \"revolutionär\", \"einzigartig\", \"bahnbrechend\", \"sensationell\", \"unglaublich\", \"fantastisch\", \"außergewöhnlich\", \"optimal\", \"perfekt\", \"innovativ\"). - **Keine Modewörter, Floskeln oder Phrasen**: Lieber frisch und konkret formulieren. - **Neutrale, sachliche Sprache**: Werbliche Übertreibungen und subjektive Bewertungen vermeiden. Fakten statt Meinungen präsentieren. - **Nicht unnötig passiv oder substantiviert schreiben**: Macht den Text schwerfälliger. - **Wortwiederholungen nur bei Hauptbegriffen vermeiden**: Die Kernbegriffe dürfen und sollen sich wiederholen, Nebensachen können variiert werden.  ## Aufgabe  Reviewe den Eingangstext gemäß diese Regeln. Achte besonders auf neutrale, informative Sprache ohne werbliche Adjektive. Entscheide, ob der Text so veröffentlicht werden kann, oder überarbeitet werden muss. Bereche eine Score von 0-100:  * 0: zusammenhangloser Unsinn * 50: vom Praktikaten geschrieben. * 80: nicht perfekt, aber kann so veröffentlicht werden * 100: perfekt.  ## Ausgabe  Ein JSON mit zwei Feldern: score, reason {   \"score\": 99,   \"reason\": \"Begründung mit konkreten Kritikpunkten und Verbesserungsvorschlängen\" } Ausführliche redaktionelle Kritik, damit der Schreiber den Text überarbeiten kann. Schreibe den Text nicht selber neu, sondern erläutere die Verbesserungsvorschläge. "
-            }
-          ]
-        },
-        "batching": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.chainLlm",
-      "typeVersion": 1.7,
-      "position": [
-        2160,
-        64
-      ],
-      "id": "7d80a446-df38-4144-a701-31aa675f7d98",
-      "name": "Review"
     }
   ],
   "pinData": {},
@@ -471,36 +351,7 @@
     },
     "AI Agent": {
       "main": [
-        [
-          {
-            "node": "Review",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "OpenAI Chat Model1": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Review",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If1": {
-      "main": [
-        [],
-        [
-          {
-            "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Edit Fields": {
@@ -562,46 +413,13 @@
           }
         ]
       ]
-    },
-    "Structured Output Parser": {
-      "ai_outputParser": [
-        [
-          {
-            "node": "Review",
-            "type": "ai_outputParser",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "OpenAI Chat Model2": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Structured Output Parser",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Review": {
-      "main": [
-        [
-          {
-            "node": "If1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "e1d36913-ed65-4d18-bd2f-5014d49afaa3",
+  "versionId": "6a2b0d1d-476c-46b2-85d3-a097019b367b",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "b81cb0b3bf8069b0d16cf6894dc892ec2f8d9fec00803e5c7e21c0a3d400d5a7"
