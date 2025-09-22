@@ -89,7 +89,7 @@ services:
       - "5678:5678"
     volumes:
       - n8n_storage:/home/node/.n8n
-      - ${COMPOSE_PROJECT_DIR}/../src/napta_workflow/napta_files:/imports:ro
+      - ../src/napta_workflow/napta_files:/imports:ro
     depends_on:
       postgres:
         condition: service_healthy
