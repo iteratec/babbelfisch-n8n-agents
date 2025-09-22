@@ -1,0 +1,4893 @@
+[
+  {
+    "page": 1,
+    "url": "https://app.napta.io/api/v1/client",
+    "data": {
+      "data": [
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Audi AG",
+            "updated_on": "2024-11-22T08:38:29.747000",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T13:50:46.886377",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "2",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/2"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Bosch S&ST",
+            "updated_on": "2021-11-08T13:55:39.325268",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T13:55:39.325268",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "3",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/3"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "SWM (Stadtwerke München)",
+            "updated_on": "2022-02-01T10:44:34.382023",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T13:56:50.126652",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "4",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/4"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "BMW",
+            "updated_on": "2021-11-08T13:57:11.951316",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T13:57:11.951316",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "5",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/5"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "RWE",
+            "updated_on": "2021-11-08T13:58:27.972583",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T13:58:27.972583",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "6",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/6"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "SWMH",
+            "updated_on": "2021-11-08T13:59:04.811797",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T13:59:04.811797",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "7",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/7"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Luy",
+            "updated_on": "2021-11-08T14:00:28.582861",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:00:28.582861",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "8",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/8"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "eurodata",
+            "updated_on": "2023-03-21T12:05:07.495161",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:02:38.363698",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "9",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/9"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "DHL",
+            "updated_on": "2021-11-08T14:29:30.320777",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:29:30.320777",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "10",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/10"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Volkswagen AG",
+            "updated_on": "2024-11-22T08:40:37.651265",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:35:40.149168",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "11",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/11"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "LMU",
+            "updated_on": "2021-11-08T14:36:46.016147",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:36:46.016147",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "12",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/12"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Industry Fusion",
+            "updated_on": "2021-11-08T14:37:39.292212",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:37:39.292212",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "13",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/13"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Instant",
+            "updated_on": "2021-11-08T14:38:04.435332",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:38:04.435332",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "14",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/14"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "MSD",
+            "updated_on": "2021-11-08T14:38:31.566109",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:38:31.566109",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "15",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/15"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Deutsche Bahn",
+            "updated_on": "2021-11-08T14:39:11.893260",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:39:11.893260",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "16",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/16"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Rösler",
+            "updated_on": "2021-11-08T14:40:15.533052",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:40:15.533052",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "17",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/17"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Fazua",
+            "updated_on": "2021-11-08T14:41:26.843196",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:41:26.843196",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "18",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/18"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "SBK",
+            "updated_on": "2021-11-08T14:42:16.904860",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:42:16.904860",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "19",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/19"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "M-Net",
+            "updated_on": "2021-11-08T14:43:33.397364",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2021-11-08T14:43:33.397364",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "20",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/20"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "iteratec",
+            "updated_on": "2022-01-10T20:16:14.320471",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-01-10T20:16:14.320471",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "22",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/22"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Kühne + Nagel",
+            "updated_on": "2022-01-10T20:16:15.069207",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-01-10T20:16:15.069207",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "23",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/23"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Hochbahn",
+            "updated_on": "2022-01-10T20:16:15.196213",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-01-10T20:16:15.196213",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "24",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/24"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "BNP Paribas",
+            "updated_on": "2022-01-10T20:16:15.231948",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-01-10T20:16:15.231948",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "25",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/25"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Ibeda",
+            "updated_on": "2022-01-10T20:16:15.269046",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-01-10T20:16:15.269046",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "26",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/26"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "The Mobility House",
+            "updated_on": "2022-01-12T15:10:18.773889",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-01-12T15:10:18.773889",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "27",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/27"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Visual Vest",
+            "updated_on": "2022-01-12T15:11:06.855722",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-01-12T15:11:06.855722",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "28",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/28"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "ERSA",
+            "updated_on": "2022-01-13T17:54:57.540350",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-01-13T17:54:57.540350",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "29",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/29"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Red Bull",
+            "updated_on": "2022-01-14T12:35:41.654313",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-01-14T12:35:41.654313",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "30",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/30"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Thüga",
+            "updated_on": "2022-01-17T15:49:11.093641",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-01-17T15:49:11.093641",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "31",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/31"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "LHT (Lufthansa Technik)",
+            "updated_on": "2022-12-02T10:48:38.368152",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-01-18T08:26:48.794529",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "32",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/32"
+          }
+        }
+      ],
+      "links": {
+        "self": "https://app.napta.io/api/v1/client",
+        "first": "https://app.napta.io/api/v1/client",
+        "last": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=8",
+        "next": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=2"
+      },
+      "meta": {
+        "count": 225
+      },
+      "jsonapi": {
+        "version": "1.0"
+      }
+    }
+  },
+  {
+    "page": 2,
+    "url": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=2",
+    "data": {
+      "data": [
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Veridos",
+            "client_metadata": {},
+            "created_on": "2022-02-04T15:01:13.994882",
+            "updated_on": "2022-02-04T15:01:13.994882",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "36",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/36"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "AKM",
+            "client_metadata": {},
+            "created_on": "2022-02-04T15:03:23.026990",
+            "updated_on": "2022-02-04T15:03:23.026990",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "37",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/37"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "SWM",
+            "client_metadata": {},
+            "created_on": "2022-02-04T15:11:07.054874",
+            "updated_on": "2022-02-04T15:11:07.054874",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "38",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/38"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Knorr Bremse",
+            "client_metadata": {},
+            "created_on": "2022-02-05T13:25:50.110284",
+            "updated_on": "2022-02-05T13:25:50.110284",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "39",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/39"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "EOS",
+            "client_metadata": {},
+            "created_on": "2022-02-07T13:21:24.363643",
+            "updated_on": "2022-02-07T13:21:24.363643",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "40",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/40"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Tchibo",
+            "client_metadata": {},
+            "created_on": "2022-02-07T14:40:16.960913",
+            "updated_on": "2022-02-07T14:40:16.960913",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "41",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/41"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Turck",
+            "client_metadata": {},
+            "created_on": "2022-02-10T15:52:46.635291",
+            "updated_on": "2022-02-10T15:52:46.635291",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "42",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/42"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Altavo",
+            "client_metadata": {},
+            "created_on": "2022-02-24T09:29:56.068493",
+            "updated_on": "2022-02-24T09:29:56.068493",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "43",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/43"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "SENEC",
+            "client_metadata": {},
+            "created_on": "2022-02-24T15:45:17.163043",
+            "updated_on": "2022-02-24T15:45:17.163043",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "44",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/44"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Econican",
+            "client_metadata": {},
+            "created_on": "2022-02-24T16:23:48.527131",
+            "updated_on": "2022-02-24T16:23:48.527131",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "45",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/45"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "HPA (Hamburg Port Authority)",
+            "client_metadata": {},
+            "created_on": "2022-03-10T15:54:01.790647",
+            "updated_on": "2022-12-02T10:48:17.276921",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "46",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/46"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Sim-cargo",
+            "client_metadata": {},
+            "created_on": "2022-04-07T16:23:35.006536",
+            "updated_on": "2022-04-07T16:23:35.006536",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "47",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/47"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Klett",
+            "client_metadata": {},
+            "created_on": "2022-04-28T14:10:40.112712",
+            "updated_on": "2022-04-28T14:10:40.112712",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "48",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/48"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "ÖBB",
+            "client_metadata": {},
+            "created_on": "2022-05-12T10:23:24.976636",
+            "updated_on": "2022-05-12T10:23:24.976636",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "49",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/49"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "POSWISE",
+            "client_metadata": {},
+            "created_on": "2022-05-13T07:18:12.639415",
+            "updated_on": "2022-05-13T07:18:12.639415",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "50",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/50"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "DB Vertrieb",
+            "client_metadata": {},
+            "created_on": "2022-05-20T07:44:24.348205",
+            "updated_on": "2022-05-20T07:44:24.348205",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "51",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/51"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "FISP (Finanz Informatik Solutions Plus)",
+            "client_metadata": {},
+            "created_on": "2022-05-27T15:26:10.590718",
+            "updated_on": "2022-06-08T14:11:45.358542",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "52",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/52"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Trivago",
+            "client_metadata": {},
+            "created_on": "2022-05-31T07:57:38.029632",
+            "updated_on": "2022-05-31T07:57:38.029632",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "53",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/53"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "BAM",
+            "client_metadata": {},
+            "created_on": "2022-06-03T08:01:49.653039",
+            "updated_on": "2022-06-03T08:01:49.653039",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "54",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/54"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Degussa Bank",
+            "client_metadata": {},
+            "created_on": "2022-06-08T13:47:25.005607",
+            "updated_on": "2022-06-08T13:47:25.005607",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "56",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/56"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "TFG Transfracht",
+            "client_metadata": {},
+            "created_on": "2022-06-08T13:52:09.120686",
+            "updated_on": "2022-06-08T14:17:03.527045",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "57",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/57"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "RMV/rms",
+            "client_metadata": {},
+            "created_on": "2022-06-08T13:52:39.758047",
+            "updated_on": "2022-06-08T13:52:39.758047",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "58",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/58"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Qivalo",
+            "client_metadata": {},
+            "created_on": "2022-06-08T13:52:56.729642",
+            "updated_on": "2022-06-08T13:52:56.729642",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "59",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/59"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "GI (Gesellschaft für Informatik)",
+            "client_metadata": {},
+            "created_on": "2022-06-08T13:53:29.001660",
+            "updated_on": "2022-06-08T14:16:11.221758",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "60",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/60"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Eurokids",
+            "client_metadata": {},
+            "created_on": "2022-06-08T13:55:20.838802",
+            "updated_on": "2022-06-08T13:55:20.838802",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "61",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/61"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "BAFA  (Bundesamt für Wirtschaft und Ausfuhrkontrolle)",
+            "client_metadata": {},
+            "created_on": "2022-06-08T13:56:42.581678",
+            "updated_on": "2022-06-08T14:12:07.821937",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "62",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/62"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "DB Cargo",
+            "client_metadata": {},
+            "created_on": "2022-06-08T13:57:03.116368",
+            "updated_on": "2022-06-08T13:57:03.116368",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "63",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/63"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "DSV",
+            "client_metadata": {},
+            "created_on": "2022-06-22T10:21:15.366585",
+            "updated_on": "2022-06-22T10:21:15.366585",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "64",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/64"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Intel",
+            "client_metadata": {},
+            "created_on": "2022-07-14T11:45:35.203502",
+            "updated_on": "2022-07-14T11:45:35.203502",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "66",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/66"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayDelete": false,
+            "name": "Remondis",
+            "client_metadata": {},
+            "created_on": "2022-08-09T13:22:53.436152",
+            "updated_on": "2022-08-09T13:22:53.436152",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null
+          },
+          "id": "67",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/67"
+          }
+        }
+      ],
+      "links": {
+        "self": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=2",
+        "first": "https://app.napta.io/api/v1/client",
+        "last": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=8",
+        "prev": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=1",
+        "next": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=3"
+      },
+      "meta": {
+        "count": 225
+      },
+      "jsonapi": {
+        "version": "1.0"
+      }
+    }
+  },
+  {
+    "page": 3,
+    "url": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=3",
+    "data": {
+      "data": [
+        {
+          "type": "client",
+          "id": "68",
+          "attributes": {
+            "created_on": "2022-08-10T10:07:09.579383",
+            "name": "RWA",
+            "updated_on": "2022-08-10T10:07:09.579383",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/68"
+          }
+        },
+        {
+          "type": "client",
+          "id": "69",
+          "attributes": {
+            "created_on": "2022-08-12T17:09:05.290109",
+            "name": "BMJ",
+            "updated_on": "2022-08-12T17:09:05.290109",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/69"
+          }
+        },
+        {
+          "type": "client",
+          "id": "70",
+          "attributes": {
+            "created_on": "2022-08-12T17:22:55.876540",
+            "name": "BMF",
+            "updated_on": "2022-08-12T17:22:55.876540",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/70"
+          }
+        },
+        {
+          "type": "client",
+          "id": "72",
+          "attributes": {
+            "created_on": "2022-08-25T06:07:49.967519",
+            "name": "Salzburg AG",
+            "updated_on": "2022-08-25T06:07:49.967519",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/72"
+          }
+        },
+        {
+          "type": "client",
+          "id": "73",
+          "attributes": {
+            "created_on": "2022-08-25T06:13:33.909962",
+            "name": "Siemens Mobility AT",
+            "updated_on": "2022-08-25T06:13:33.909962",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/73"
+          }
+        },
+        {
+          "type": "client",
+          "id": "74",
+          "attributes": {
+            "created_on": "2022-08-25T06:17:52.433648",
+            "name": "Audi Hungaria Zrt.",
+            "updated_on": "2024-11-22T08:38:39.211339",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/74"
+          }
+        },
+        {
+          "type": "client",
+          "id": "75",
+          "attributes": {
+            "created_on": "2022-08-25T13:24:12.569093",
+            "name": "Red Bull Media House",
+            "updated_on": "2022-08-25T13:24:12.569093",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/75"
+          }
+        },
+        {
+          "type": "client",
+          "id": "76",
+          "attributes": {
+            "created_on": "2022-09-15T10:12:35.169119",
+            "name": "Stadtwerke Neumünster",
+            "updated_on": "2022-09-15T10:12:35.169119",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/76"
+          }
+        },
+        {
+          "type": "client",
+          "id": "77",
+          "attributes": {
+            "created_on": "2022-09-15T10:26:44.907714",
+            "name": "Hanse Merkur",
+            "updated_on": "2022-09-15T10:26:44.907714",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/77"
+          }
+        },
+        {
+          "type": "client",
+          "id": "79",
+          "attributes": {
+            "created_on": "2022-09-15T11:27:20.768500",
+            "name": "PADline",
+            "updated_on": "2022-09-15T11:27:20.768500",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/79"
+          }
+        },
+        {
+          "type": "client",
+          "id": "80",
+          "attributes": {
+            "created_on": "2022-09-15T11:34:25.295334",
+            "name": "NRail",
+            "updated_on": "2022-09-15T11:34:25.295334",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/80"
+          }
+        },
+        {
+          "type": "client",
+          "id": "81",
+          "attributes": {
+            "created_on": "2022-09-15T12:11:06.675637",
+            "name": "Marquard & Bahls",
+            "updated_on": "2022-09-15T12:11:06.675637",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/81"
+          }
+        },
+        {
+          "type": "client",
+          "id": "82",
+          "attributes": {
+            "created_on": "2022-09-15T12:14:05.480740",
+            "name": "BSB (Behörde für Schule und Berufsbildung)",
+            "updated_on": "2022-12-02T10:46:30.101748",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/82"
+          }
+        },
+        {
+          "type": "client",
+          "id": "83",
+          "attributes": {
+            "created_on": "2022-09-15T12:16:01.819744",
+            "name": "Stiftung Haus der kleinen Forscher",
+            "updated_on": "2022-09-15T12:16:01.819744",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/83"
+          }
+        },
+        {
+          "type": "client",
+          "id": "84",
+          "attributes": {
+            "created_on": "2022-09-15T12:25:33.266934",
+            "name": "Universität Hamburg",
+            "updated_on": "2022-09-15T12:25:33.266934",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/84"
+          }
+        },
+        {
+          "type": "client",
+          "id": "85",
+          "attributes": {
+            "created_on": "2022-09-15T12:29:01.874555",
+            "name": "BGW (Berufsgenossenschaft für Gesundheitsdienst und Wohlfahrtspflege)",
+            "updated_on": "2022-12-02T10:47:46.950091",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/85"
+          }
+        },
+        {
+          "type": "client",
+          "id": "86",
+          "attributes": {
+            "created_on": "2022-09-15T12:32:07.597918",
+            "name": "HSV",
+            "updated_on": "2022-09-15T12:32:07.597918",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/86"
+          }
+        },
+        {
+          "type": "client",
+          "id": "87",
+          "attributes": {
+            "created_on": "2022-09-15T12:34:36.211545",
+            "name": "AZV (Abwasser-Zweckverband Südholstein)",
+            "updated_on": "2022-12-02T10:47:26.855850",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/87"
+          }
+        },
+        {
+          "type": "client",
+          "id": "88",
+          "attributes": {
+            "created_on": "2022-09-15T12:38:57.208029",
+            "name": "Dataport",
+            "updated_on": "2022-09-15T12:38:57.208029",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/88"
+          }
+        },
+        {
+          "type": "client",
+          "id": "89",
+          "attributes": {
+            "created_on": "2022-09-15T12:57:44.106631",
+            "name": "Buhck",
+            "updated_on": "2022-09-15T12:57:44.106631",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/89"
+          }
+        },
+        {
+          "type": "client",
+          "id": "90",
+          "attributes": {
+            "created_on": "2022-09-15T13:08:38.503079",
+            "name": "Justify",
+            "updated_on": "2022-09-15T13:08:38.503079",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/90"
+          }
+        },
+        {
+          "type": "client",
+          "id": "91",
+          "attributes": {
+            "created_on": "2022-09-20T07:36:05.989951",
+            "name": "Blume 2000",
+            "updated_on": "2022-09-20T07:36:05.989951",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/91"
+          }
+        },
+        {
+          "type": "client",
+          "id": "92",
+          "attributes": {
+            "created_on": "2022-09-21T08:41:30.643222",
+            "name": "SDA SE",
+            "updated_on": "2022-09-21T08:41:30.643222",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/92"
+          }
+        },
+        {
+          "type": "client",
+          "id": "93",
+          "attributes": {
+            "created_on": "2022-10-20T12:17:49.295960",
+            "name": "InnoButler GmbH",
+            "updated_on": "2022-10-20T12:17:49.295960",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/93"
+          }
+        },
+        {
+          "type": "client",
+          "id": "94",
+          "attributes": {
+            "created_on": "2022-10-27T10:04:19.455499",
+            "name": "e-r3volt",
+            "updated_on": "2022-10-27T10:04:19.455499",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/94"
+          }
+        },
+        {
+          "type": "client",
+          "id": "95",
+          "attributes": {
+            "created_on": "2022-11-03T16:18:31.478160",
+            "name": "BMBF",
+            "updated_on": "2022-11-03T16:18:31.478160",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/95"
+          }
+        },
+        {
+          "type": "client",
+          "id": "96",
+          "attributes": {
+            "created_on": "2022-11-11T07:01:40.843870",
+            "name": "Haag Streit",
+            "updated_on": "2022-11-11T07:01:40.843870",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/96"
+          }
+        },
+        {
+          "type": "client",
+          "id": "97",
+          "attributes": {
+            "created_on": "2022-12-05T13:20:49.146342",
+            "name": "Paul Hartmann Group",
+            "updated_on": "2022-12-05T13:20:49.146342",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/97"
+          }
+        },
+        {
+          "type": "client",
+          "id": "98",
+          "attributes": {
+            "created_on": "2022-12-06T11:29:14.295147",
+            "name": "Breuninger",
+            "updated_on": "2022-12-06T11:29:14.295147",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/98"
+          }
+        },
+        {
+          "type": "client",
+          "id": "99",
+          "attributes": {
+            "created_on": "2022-12-07T15:34:01.656657",
+            "name": "Jungheinrich",
+            "updated_on": "2022-12-07T15:34:01.656657",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {}
+          },
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/99"
+          }
+        }
+      ],
+      "links": {
+        "self": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=3",
+        "first": "https://app.napta.io/api/v1/client",
+        "last": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=8",
+        "prev": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=2",
+        "next": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=4"
+      },
+      "meta": {
+        "count": 225
+      },
+      "jsonapi": {
+        "version": "1.0"
+      }
+    }
+  },
+  {
+    "page": 4,
+    "url": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=4",
+    "data": {
+      "data": [
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Thüga Smart Service GmbH",
+            "updated_on": "2022-12-22T13:34:53.527612",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2022-12-22T13:34:53.527612",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "100",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/100"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Mercedes-Benz AG",
+            "updated_on": "2023-02-03T13:09:33.348284",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-02-03T13:09:33.348284",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "101",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/101"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Viastore GmbH",
+            "updated_on": "2023-02-15T11:26:47.788629",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-02-15T11:26:47.788629",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "102",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/102"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Ernst Klett Verlag",
+            "updated_on": "2023-02-15T11:47:08.406967",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-02-15T11:47:08.406967",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "103",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/103"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "SachsenEnergie",
+            "updated_on": "2023-03-03T09:08:39.772800",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-03-03T09:08:39.772800",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "105",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/105"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Deka",
+            "updated_on": "2023-03-06T13:09:48.518078",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-03-06T13:09:48.518078",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "106",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/106"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Bundesbank",
+            "updated_on": "2023-03-06T15:34:58.593320",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-03-06T15:34:58.593320",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "107",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/107"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "DVZ-MV",
+            "updated_on": "2023-03-13T16:46:30.418534",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-03-13T16:46:30.418534",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "108",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/108"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Mission Embedded",
+            "updated_on": "2023-03-17T08:02:07.887904",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-03-17T08:02:07.887904",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "109",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/109"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Kunde in Ottobrunn",
+            "updated_on": "2023-03-20T08:16:48.575277",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-03-20T08:16:48.575277",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "110",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/110"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "DB Regio",
+            "updated_on": "2023-03-24T16:35:36.468054",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-03-24T16:35:36.468054",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "111",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/111"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "NTB Solutions",
+            "updated_on": "2023-04-03T11:04:36.220240",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-04-03T11:04:36.220240",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "112",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/112"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Igefa",
+            "updated_on": "2023-04-06T11:25:49.987476",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-04-06T11:25:49.987476",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "113",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/113"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "DB Fernverkehr",
+            "updated_on": "2023-04-20T06:39:12.299777",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-04-20T06:39:12.299777",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "114",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/114"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "BFW",
+            "updated_on": "2023-04-24T15:14:30.050145",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-04-24T15:14:30.050145",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "115",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/115"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Festo",
+            "updated_on": "2023-05-24T14:58:49.139393",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-05-24T14:58:49.139393",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "116",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/116"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "BWi",
+            "updated_on": "2023-06-02T05:58:04.897529",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-06-02T05:58:04.897529",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "117",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/117"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "T.b.d.",
+            "updated_on": "2023-07-06T14:50:33.167588",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-07-06T14:50:33.167588",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "118",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/118"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Lufthansa Airplus",
+            "updated_on": "2023-07-13T10:42:26.379032",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-07-13T10:42:26.379032",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "119",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/119"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "ESystems MTG",
+            "updated_on": "2023-07-20T14:25:43.623978",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-07-20T14:25:43.623978",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "120",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/120"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Kobaltblau",
+            "updated_on": "2023-08-03T09:02:30.575226",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-08-03T09:02:30.575226",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "121",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/121"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "MaMa Events und Services GmbH ",
+            "updated_on": "2023-08-03T15:43:25.860318",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-08-03T15:43:25.860318",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "122",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/122"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "HfMT (Hochschule für Musik & Technik)",
+            "updated_on": "2023-08-17T17:09:50.659014",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-08-17T17:09:50.659014",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "123",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/123"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Seedbox Ventures",
+            "updated_on": "2023-09-01T09:46:39.212344",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-09-01T09:46:39.212344",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "124",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/124"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Swissbit",
+            "updated_on": "2023-09-21T15:33:43.042016",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-09-21T15:33:43.042016",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "125",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/125"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Voestalpine",
+            "updated_on": "2023-10-10T07:20:50.275565",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-10-10T07:20:50.275565",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "126",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/126"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Raabe Verlag",
+            "updated_on": "2023-10-10T12:53:52.646494",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-10-10T12:53:52.646494",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "127",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/127"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Swissbit Germany AG",
+            "updated_on": "2023-10-20T07:31:27.444701",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-10-20T07:31:27.444701",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "128",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/128"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "SWAD",
+            "updated_on": "2023-10-27T05:51:52.177678",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-10-27T05:51:52.177678",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "129",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/129"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "client_metadata": {},
+            "name": "Hays",
+            "updated_on": "2023-10-27T06:27:00.545259",
+            "_mayDelete": false,
+            "external_id": null,
+            "created_on": "2023-10-27T06:27:00.545259",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            }
+          },
+          "id": "130",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/130"
+          }
+        }
+      ],
+      "links": {
+        "self": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=4",
+        "first": "https://app.napta.io/api/v1/client",
+        "last": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=8",
+        "prev": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=3",
+        "next": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=5"
+      },
+      "meta": {
+        "count": 225
+      },
+      "jsonapi": {
+        "version": "1.0"
+      }
+    }
+  },
+  {
+    "page": 5,
+    "url": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=5",
+    "data": {
+      "data": [
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2023-11-16T15:26:56.023643",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "MVTec",
+            "updated_on": "2023-11-16T15:26:56.023643"
+          },
+          "id": "131",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/131"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2023-11-30T08:57:18.451312",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Stemmer Imaging",
+            "updated_on": "2023-11-30T08:57:18.451312"
+          },
+          "id": "132",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/132"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2023-12-04T09:42:58.956433",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Festool",
+            "updated_on": "2023-12-04T09:42:58.956433"
+          },
+          "id": "133",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/133"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2023-12-16T23:51:52.474450",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Q-Perior",
+            "updated_on": "2023-12-16T23:51:52.474450"
+          },
+          "id": "134",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/134"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2023-12-19T08:25:06.294027",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Dachser",
+            "updated_on": "2023-12-19T08:25:06.294027"
+          },
+          "id": "135",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/135"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2023-12-19T15:00:49.553199",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "PS-Group",
+            "updated_on": "2023-12-19T15:00:49.553199"
+          },
+          "id": "136",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/136"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2023-12-20T13:25:54.467850",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "50Hertz",
+            "updated_on": "2023-12-20T13:25:54.467850"
+          },
+          "id": "137",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/137"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-05T09:03:40.861731",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Edelstein",
+            "updated_on": "2024-01-05T09:03:40.861731"
+          },
+          "id": "138",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/138"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-05T09:10:51.227781",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Diamant",
+            "updated_on": "2024-01-05T09:10:51.227781"
+          },
+          "id": "139",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/139"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-10T10:48:34.573579",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "NOYO Mobility AG",
+            "updated_on": "2024-01-10T10:48:34.573579"
+          },
+          "id": "140",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/140"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-17T19:45:50.450635",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Divers",
+            "updated_on": "2024-01-17T19:45:50.450635"
+          },
+          "id": "141",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/141"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-18T07:13:46.506184",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Kl-company",
+            "updated_on": "2024-01-18T07:13:46.506184"
+          },
+          "id": "142",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/142"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-18T12:04:05.648889",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Fuji Corporation",
+            "updated_on": "2024-01-18T12:04:05.648889"
+          },
+          "id": "143",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/143"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-24T08:54:49.685561",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Tasking GmbH",
+            "updated_on": "2024-01-24T08:54:49.685561"
+          },
+          "id": "144",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/144"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-24T10:37:13.875229",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Doctorfrost GmbH",
+            "updated_on": "2024-01-24T10:37:13.875229"
+          },
+          "id": "145",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/145"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-24T15:27:54.311284",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "IE Engineering Group AG",
+            "updated_on": "2024-01-24T15:27:54.311284"
+          },
+          "id": "146",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/146"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-26T12:29:57.732510",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "ShareYourSpace GmbH",
+            "updated_on": "2024-01-26T12:29:57.732510"
+          },
+          "id": "147",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/147"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-26T14:38:36.622361",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Intern",
+            "updated_on": "2024-01-26T14:38:36.622361"
+          },
+          "id": "148",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/148"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-01-30T08:24:46.983038",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Stadtwerke Düsseldorf",
+            "updated_on": "2024-01-30T08:24:46.983038"
+          },
+          "id": "149",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/149"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-02-06T08:31:18.375005",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "BG Phoenics",
+            "updated_on": "2024-02-06T08:31:18.375005"
+          },
+          "id": "150",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/150"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-02-14T08:31:49.247913",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "SÜSS MicroTec",
+            "updated_on": "2024-02-14T08:31:49.247913"
+          },
+          "id": "151",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/151"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-02-19T10:49:59.458449",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Bayerisches Landesamt für Gesundheit und Lebensmittel",
+            "updated_on": "2024-02-19T10:49:59.458449"
+          },
+          "id": "152",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/152"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-02-20T10:19:00.416338",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Heidelberg Materials ",
+            "updated_on": "2024-02-20T10:19:00.416338"
+          },
+          "id": "153",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/153"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-02-23T07:31:47.595524",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "ING",
+            "updated_on": "2024-02-23T07:31:47.595524"
+          },
+          "id": "154",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/154"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-02-26T10:47:20.350329",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Carl Zeiss AG",
+            "updated_on": "2024-02-26T10:47:20.350329"
+          },
+          "id": "155",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/155"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-03-07T11:15:01.965825",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Schenker",
+            "updated_on": "2024-03-07T11:15:01.965825"
+          },
+          "id": "156",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/156"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-03-08T09:57:28.428222",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "145 Vodka",
+            "updated_on": "2024-03-08T09:57:28.428222"
+          },
+          "id": "157",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/157"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-03-26T06:42:34.217365",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Company Bike",
+            "updated_on": "2024-03-26T06:42:34.217365"
+          },
+          "id": "159",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/159"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-03-27T07:39:08.449913",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "SchwarzIT",
+            "updated_on": "2024-03-27T07:39:08.449913"
+          },
+          "id": "160",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/160"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "created_on": "2024-03-28T14:10:35.519068",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "external_id": null,
+            "_mayDelete": false,
+            "client_metadata": {},
+            "name": "Finion",
+            "updated_on": "2024-03-28T14:10:35.519068"
+          },
+          "id": "161",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/161"
+          }
+        }
+      ],
+      "links": {
+        "self": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=5",
+        "first": "https://app.napta.io/api/v1/client",
+        "last": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=8",
+        "prev": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=4",
+        "next": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=6"
+      },
+      "meta": {
+        "count": 225
+      },
+      "jsonapi": {
+        "version": "1.0"
+      }
+    }
+  },
+  {
+    "page": 6,
+    "url": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=6",
+    "data": {
+      "data": [
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "S12",
+            "created_on": "2024-04-09T15:08:26.976140",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-04-09T15:08:26.976140",
+            "client_metadata": {}
+          },
+          "id": "162",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/162"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "CargoSoft",
+            "created_on": "2024-04-18T15:03:46.211933",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-04-18T15:03:46.211933",
+            "client_metadata": {}
+          },
+          "id": "163",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/163"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Hapag-Lloyd",
+            "created_on": "2024-04-25T12:43:54.048352",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-04-25T12:43:54.048352",
+            "client_metadata": {}
+          },
+          "id": "164",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/164"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Bundesagentur für Arbeit",
+            "created_on": "2024-04-30T12:23:54.832350",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-04-30T12:23:54.832350",
+            "client_metadata": {}
+          },
+          "id": "165",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/165"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "BMW Group",
+            "created_on": "2024-05-10T07:37:58.983003",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-05-10T07:37:58.983003",
+            "client_metadata": {}
+          },
+          "id": "166",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/166"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Messe München",
+            "created_on": "2024-06-13T14:55:01.047526",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-06-13T14:55:01.047526",
+            "client_metadata": {}
+          },
+          "id": "167",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/167"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "TEVEO",
+            "created_on": "2024-06-14T09:49:36.518012",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-06-14T09:49:36.518012",
+            "client_metadata": {}
+          },
+          "id": "168",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/168"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "ift Rosenheim",
+            "created_on": "2024-07-09T16:16:48.707263",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-07-09T16:16:48.707263",
+            "client_metadata": {}
+          },
+          "id": "169",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/169"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "DEHOGA",
+            "created_on": "2024-07-18T14:35:30.795595",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-07-18T14:35:30.795595",
+            "client_metadata": {}
+          },
+          "id": "170",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/170"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "BearingPoint",
+            "created_on": "2024-07-18T15:18:16.434675",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-07-18T15:18:16.434675",
+            "client_metadata": {}
+          },
+          "id": "171",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/171"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Railpool",
+            "created_on": "2024-07-19T06:47:33.401748",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-07-19T06:47:33.401748",
+            "client_metadata": {}
+          },
+          "id": "172",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/172"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "ING DiBa AG",
+            "created_on": "2024-07-23T07:26:33.776765",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-07-23T07:26:33.776765",
+            "client_metadata": {}
+          },
+          "id": "173",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/173"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Ebroker",
+            "created_on": "2024-07-25T21:42:14.818301",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-07-25T21:42:14.818301",
+            "client_metadata": {}
+          },
+          "id": "174",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/174"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "BERGER Holding",
+            "created_on": "2024-07-26T08:15:17.665842",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-07-26T08:15:17.665842",
+            "client_metadata": {}
+          },
+          "id": "175",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/175"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Stadt Frankfurt",
+            "created_on": "2024-08-01T10:50:51.447169",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-08-01T10:50:51.447169",
+            "client_metadata": {}
+          },
+          "id": "176",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/176"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Nürnberger Versicherung",
+            "created_on": "2024-08-22T14:03:39.941215",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-08-22T14:03:39.941215",
+            "client_metadata": {}
+          },
+          "id": "177",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/177"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "DB InfraGo AG",
+            "created_on": "2024-08-23T05:27:05.627253",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-08-23T05:27:05.627253",
+            "client_metadata": {}
+          },
+          "id": "178",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/178"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Slab",
+            "created_on": "2024-08-28T13:09:19.592412",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-08-28T13:09:19.592412",
+            "client_metadata": {}
+          },
+          "id": "179",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/179"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Energie und Wasser Potsdam GmbH",
+            "created_on": "2024-09-03T10:37:12.614798",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-09-03T10:37:12.614798",
+            "client_metadata": {}
+          },
+          "id": "180",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/180"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "AppliedAI",
+            "created_on": "2024-09-03T11:50:01.777760",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-09-03T11:50:01.777760",
+            "client_metadata": {}
+          },
+          "id": "181",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/181"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "EnBW",
+            "created_on": "2024-09-12T15:22:56.058152",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-09-12T15:22:56.058152",
+            "client_metadata": {}
+          },
+          "id": "182",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/182"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "OnePager Software GmbH",
+            "created_on": "2024-09-18T07:21:34.175811",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-09-18T07:21:34.175811",
+            "client_metadata": {}
+          },
+          "id": "183",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/183"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "BITMARCK",
+            "created_on": "2024-09-19T11:35:14.522039",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-09-19T11:35:14.522039",
+            "client_metadata": {}
+          },
+          "id": "184",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/184"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "BKK",
+            "created_on": "2024-09-19T12:56:50.919712",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-09-19T12:56:50.919712",
+            "client_metadata": {}
+          },
+          "id": "185",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/185"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "DB Energie",
+            "created_on": "2024-09-20T15:47:49.249990",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-09-20T15:47:49.249990",
+            "client_metadata": {}
+          },
+          "id": "186",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/186"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Ahorn AG",
+            "created_on": "2024-10-10T07:13:05.711959",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-10-10T07:13:05.711959",
+            "client_metadata": {}
+          },
+          "id": "187",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/187"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "OLB",
+            "created_on": "2024-10-21T13:59:01.300648",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-10-21T13:59:01.300648",
+            "client_metadata": {}
+          },
+          "id": "188",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/188"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Wavestone",
+            "created_on": "2024-10-22T15:14:55.605864",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-10-22T15:14:55.605864",
+            "client_metadata": {}
+          },
+          "id": "189",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/189"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "Germo GmbH",
+            "created_on": "2024-11-13T07:31:55.374367",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-11-13T07:31:55.374367",
+            "client_metadata": {}
+          },
+          "id": "190",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/190"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "name": "interroll",
+            "created_on": "2024-11-14T09:58:47.481785",
+            "_mayDelete": false,
+            "external_id": null,
+            "updated_on": "2024-11-14T09:58:47.481785",
+            "client_metadata": {}
+          },
+          "id": "191",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/191"
+          }
+        }
+      ],
+      "links": {
+        "self": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=6",
+        "first": "https://app.napta.io/api/v1/client",
+        "last": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=8",
+        "prev": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=5",
+        "next": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=7"
+      },
+      "meta": {
+        "count": 225
+      },
+      "jsonapi": {
+        "version": "1.0"
+      }
+    }
+  },
+  {
+    "page": 7,
+    "url": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=7",
+    "data": {
+      "data": [
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "IK Consulting GmbH",
+            "updated_on": "2024-11-15T08:20:54.105111",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2024-11-15T08:20:54.105111"
+          },
+          "id": "192",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/192"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "TQ-Group",
+            "updated_on": "2024-11-20T16:11:03.709743",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2024-11-20T16:11:03.709743"
+          },
+          "id": "193",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/193"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "TU Berlin",
+            "updated_on": "2024-11-26T14:17:30.429206",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2024-11-26T14:17:30.429206"
+          },
+          "id": "194",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/194"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "BOX ID",
+            "updated_on": "2024-11-28T08:11:31.094597",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2024-11-28T08:11:31.094597"
+          },
+          "id": "195",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/195"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "InoVirtue",
+            "updated_on": "2024-12-03T11:02:57.564758",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2024-12-03T11:02:57.564758"
+          },
+          "id": "196",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/196"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Ragn-Sells",
+            "updated_on": "2024-12-03T15:46:05.934557",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2024-12-03T15:46:05.934557"
+          },
+          "id": "197",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/197"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Freistaat Bayern",
+            "updated_on": "2024-12-04T14:44:26.776754",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2024-12-04T14:44:26.776754"
+          },
+          "id": "198",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/198"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "ndaal Ges.f. Sicherheit in der Informationstechnik mbH & Co. KG",
+            "updated_on": "2024-12-05T17:06:14.022985",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2024-12-05T17:06:14.022985"
+          },
+          "id": "199",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/199"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Hausbank München eG",
+            "updated_on": "2024-12-12T14:16:19.553666",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2024-12-12T14:16:19.553666"
+          },
+          "id": "200",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/200"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Valentin Software",
+            "updated_on": "2024-12-18T12:05:38.224948",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2024-12-18T12:05:38.224948"
+          },
+          "id": "201",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/201"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "LHM-Baureferat Ingenieurbau",
+            "updated_on": "2025-01-24T10:24:08.117061",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-01-24T10:24:08.117061"
+          },
+          "id": "202",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/202"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "bravobike GmbH",
+            "updated_on": "2025-01-27T09:39:25.150712",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-01-27T09:39:25.150712"
+          },
+          "id": "203",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/203"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "TU München",
+            "updated_on": "2025-01-30T07:22:43.525251",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-01-30T07:22:43.525251"
+          },
+          "id": "204",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/204"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Rentenbank",
+            "updated_on": "2025-01-30T16:10:42.452924",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-01-30T16:10:42.452924"
+          },
+          "id": "205",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/205"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "QITS",
+            "updated_on": "2025-01-31T05:36:48.117087",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-01-31T05:36:48.117087"
+          },
+          "id": "206",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/206"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Testkunde - Napta Schulung",
+            "updated_on": "2025-02-03T10:50:32.491321",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-02-03T10:50:32.491321"
+          },
+          "id": "207",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/207"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Mittelstand AG (PV Schulung)",
+            "updated_on": "2025-02-07T09:51:48.380541",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-02-07T09:51:48.380541"
+          },
+          "id": "208",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/208"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Comparus",
+            "updated_on": "2025-02-07T15:11:51.560776",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-02-07T15:11:51.560776"
+          },
+          "id": "209",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/209"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "KVB - Kassenärztliche Vereinigung Bayern",
+            "updated_on": "2025-02-07T15:34:33.002221",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-02-07T15:34:33.002221"
+          },
+          "id": "210",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/210"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Syna",
+            "updated_on": "2025-02-10T15:08:34.574394",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-02-10T15:08:34.574394"
+          },
+          "id": "211",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/211"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "GKL - Gemeinsame Klassenlotterie",
+            "updated_on": "2025-02-11T15:01:38.853624",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-02-11T15:01:38.853624"
+          },
+          "id": "212",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/212"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Electric Way",
+            "updated_on": "2025-02-20T09:41:54.668463",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-02-20T09:41:54.668463"
+          },
+          "id": "213",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/213"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Diakonie",
+            "updated_on": "2025-02-24T11:14:16.094079",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-02-24T11:14:16.094079"
+          },
+          "id": "214",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/214"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Open Logistics Foundation",
+            "updated_on": "2025-03-04T09:40:02.435028",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-03-04T09:40:02.435028"
+          },
+          "id": "215",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/215"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "StarFinance",
+            "updated_on": "2025-03-05T09:26:04.425522",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-03-05T09:26:04.425522"
+          },
+          "id": "216",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/216"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Star Finanz GmbH",
+            "updated_on": "2025-03-05T09:27:18.852135",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-03-05T09:27:18.852135"
+          },
+          "id": "217",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/217"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Blue Marble Health",
+            "updated_on": "2025-03-11T15:17:15.928417",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-03-11T15:17:15.928417"
+          },
+          "id": "218",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/218"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Papierfabrik Louisenthal",
+            "updated_on": "2025-03-26T06:31:02.265582",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-03-26T06:31:02.265582"
+          },
+          "id": "219",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/219"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "Alcedis GmbH",
+            "updated_on": "2025-03-26T14:19:28.715995",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-03-26T14:19:28.715995"
+          },
+          "id": "220",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/220"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "external_id": null,
+            "name": "DLR",
+            "updated_on": "2025-04-11T05:57:20.059808",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "client_metadata": {},
+            "created_on": "2025-04-11T05:57:20.059808"
+          },
+          "id": "221",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/221"
+          }
+        }
+      ],
+      "links": {
+        "self": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=7",
+        "first": "https://app.napta.io/api/v1/client",
+        "last": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=8",
+        "prev": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=6",
+        "next": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=8"
+      },
+      "meta": {
+        "count": 225
+      },
+      "jsonapi": {
+        "version": "1.0"
+      }
+    }
+  },
+  {
+    "page": 8,
+    "url": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=8",
+    "data": {
+      "data": [
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-04-11T08:25:17.147173",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-04-11T08:25:17.147173",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "Stadtwerke Speyer"
+          },
+          "id": "222",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/222"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-04-25T08:31:32.059189",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-04-25T08:31:32.059189",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "Automotive & Manufacuring"
+          },
+          "id": "223",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/223"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-04-28T15:19:43.637209",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-04-28T15:19:43.637209",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "GEL Express Logistik"
+          },
+          "id": "224",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/224"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-04-29T07:22:42.519774",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-04-29T07:22:42.519774",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "Jobcenter"
+          },
+          "id": "225",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/225"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-05-02T13:25:57.001578",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-05-02T13:25:57.001578",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "Mainzer Stadtwerke"
+          },
+          "id": "226",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/226"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-05-05T14:15:49.029517",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-05-05T14:15:49.029517",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "Funk"
+          },
+          "id": "227",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/227"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-05-14T10:47:28.282556",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-05-14T10:47:28.282556",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "Friedrich Verlag"
+          },
+          "id": "228",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/228"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-06-04T07:26:22.160367",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-06-04T07:26:22.160367",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "Raiffeisen Immobilien Vermittlung"
+          },
+          "id": "229",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/229"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-07-07T14:36:38.097983",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-07-07T14:36:38.097983",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "Nurdemteam-e.G."
+          },
+          "id": "230",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/230"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-07-08T15:11:16.798222",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-07-08T15:11:16.798222",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "Gpi"
+          },
+          "id": "231",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/231"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-08-12T08:04:00.113200",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-08-12T08:04:00.113200",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "GEA"
+          },
+          "id": "232",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/232"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-08-12T14:10:22.026481",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-08-12T14:10:22.026481",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "Engel&Völkers"
+          },
+          "id": "233",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/233"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-08-14T15:02:04.339419",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-08-14T15:02:04.339419",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "Airbus"
+          },
+          "id": "234",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/234"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-08-14T15:27:07.044611",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-08-14T15:27:07.044611",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "iServ"
+          },
+          "id": "235",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/235"
+          }
+        },
+        {
+          "type": "client",
+          "attributes": {
+            "updated_on": "2025-08-26T09:36:43.820775",
+            "external_id": null,
+            "client_metadata": {},
+            "created_on": "2025-08-26T09:36:43.820775",
+            "_mayUpdate": {
+              "client_metadata": {},
+              "default": false,
+              "name": false,
+              "external_id": false
+            },
+            "_mayDelete": false,
+            "name": "AEROCOMPACT"
+          },
+          "id": "236",
+          "links": {
+            "self": "https://app.napta.io/api/v1/client/236"
+          }
+        }
+      ],
+      "links": {
+        "self": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=8",
+        "first": "https://app.napta.io/api/v1/client",
+        "last": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=8",
+        "prev": "https://app.napta.io/api/v1/client?page%5Bnumber%5D=7"
+      },
+      "meta": {
+        "count": 225
+      },
+      "jsonapi": {
+        "version": "1.0"
+      }
+    }
+  }
+]

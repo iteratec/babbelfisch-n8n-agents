@@ -1,0 +1,72 @@
+# Napta Projects Workflow – Setup Guide
+
+This guide explains how to set up the **Napta Projects Workflows** in [n8n](https://n8n.io/) and connect them with a local PostgreSQL database.
+
+---
+
+## 1. Install pgAdmin 4
+Download and install **pgAdmin 4** from the official PostgreSQL website:  
+👉 [Download pgAdmin 4](https://www.pgadmin.org/download/)
+
+---
+
+## 2. Configure a New Server in pgAdmin
+1. Open **pgAdmin 4**.  
+2. Right-click on *Servers* → *Create* → *Server...*  
+3. Fill in the fields as follows:
+
+**General tab**  
+- **Name:** `localhost`
+
+**Connection tab**  
+- **Host name/address:** `localhost`  
+- **Maintenance database:** `n8n`  
+- **Username:** `n8n`  
+- **Password:** use the password from your `local.env` file  
+
+4. Save and connect to the server.  
+
+---
+
+## 3. Create a New Database
+1. Right-click on your new server → *Create* → *Database...*  
+2. Name the database:  "napta-projects"
+
+---
+
+## 4. Import the Workflows into n8n
+There are two workflows to import:  
+
+### 4.1 db_setup Workflow
+- Open the workflow in n8n.  
+- Add the PostgreSQL credentials:  
+- **Host:** `postgres`  
+- **Database:** `napta-projects`  
+- **User:** `n8n`  
+- **Password:** use the password from `local.env`  
+- **Port:** `5432`  
+- Run the **db_setup** workflow **first**.  
+- This loads all data from the Napta files into the database.  
+
+### 4.2 query Workflow
+- (Optional) Add your **IterGPT API key** in the workflow if needed.  
+
+---
+
+## 5. Using the Query Workflow
+- In the **chat**, you can enter either:
+    - a **Project ID**  
+    - or a **Project name**  
+
+- If the project name you enter is not written exactly as in the Napta dataset, an AI will suggest the closest match.  
+    - You will need to confirm with **Yes** before proceeding.  
+
+- The bot will then return:
+    - All possible **project roles**  
+    - All **technologies**  
+    - A short **guessed project description**  
+
+---
+
+## ✅ Setup Complete
+You’re now ready to use the **Napta Projects Workflows** in n8n! 🎉

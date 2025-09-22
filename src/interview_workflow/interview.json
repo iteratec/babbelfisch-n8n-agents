@@ -1,0 +1,366 @@
+{
+  "name": "Interview",
+  "nodes": [
+    {
+      "parameters": {
+        "model": "iteratec/bge-m3",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        496,
+        480
+      ],
+      "id": "508b555a-3bab-4066-9fa0-ffd00a62bfc8",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "5G18H8IWRnUwHR7B",
+          "name": "IteraGPT"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "=interview:context:{{ $json.sessionId }}",
+        "value": "={{ $fromAI('projectId', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.redisTool",
+      "typeVersion": 1,
+      "position": [
+        896,
+        528
+      ],
+      "id": "dc06724b-f382-4d37-a55f-f8a33f4cfff4",
+      "name": "Projekt Kontext speichern",
+      "credentials": {
+        "redis": {
+          "id": "JYjnb0S7oQH2Ho5m",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionTTL": "={{ 86400 * 7 }}",
+        "contextWindowLength": 40
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
+      "typeVersion": 1.5,
+      "position": [
+        288,
+        224
+      ],
+      "id": "09a71823-4ff5-41aa-97f7-c4c4a1335b05",
+      "name": "Redis Chat Memory1",
+      "credentials": {
+        "redis": {
+          "id": "JYjnb0S7oQH2Ho5m",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "azure/gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "azure/gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        96,
+        240
+      ],
+      "id": "9806be01-47ad-4887-b111-aad091c71420",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "5G18H8IWRnUwHR7B",
+          "name": "IteraGPT"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1.1,
+      "position": [
+        416,
+        224
+      ],
+      "id": "82eec1d0-1889-4439-a017-9eea0e3106e2",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "facts",
+        "key": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Key', `Give the project_id to find facts we gathered before.`, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redisTool",
+      "typeVersion": 1,
+      "position": [
+        1008,
+        416
+      ],
+      "id": "b6736b4c-794e-46e4-82a3-90cd67dd077f",
+      "name": "Facts Tool",
+      "credentials": {
+        "redis": {
+          "id": "JYjnb0S7oQH2Ho5m",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "Call this tool to get reference projects for a given client or technology. Give it a search term as query.",
+        "workflowId": {
+          "__rl": true,
+          "value": "Jd0BW0YThFGSgUVd",
+          "mode": "list",
+          "cachedResultName": "Markets Chatbot — Projekt Referenzen"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        992,
+        224
+      ],
+      "id": "9425b733-b59d-45e3-8434-4365642df59c",
+      "name": "Referenz Projekte Tool"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "Wenn du ausreichend Informationen zur Identifikation eines Projekts hast, kannst du hier prüfen, ob es bereits in Interview dazu gab.",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "interviews",
+          "mode": "list",
+          "cachedResultName": "interviews"
+        },
+        "topK": 3,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        560,
+        368
+      ],
+      "id": "b2e9b398-c497-456c-a720-dc1262c55b81",
+      "name": "Interview History",
+      "credentials": {
+        "qdrantApi": {
+          "id": "jiVoJ7MxWLoH6PkA",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "action": "generate",
+        "dataPropertyName": "projectId"
+      },
+      "type": "n8n-nodes-base.cryptoTool",
+      "typeVersion": 1,
+      "position": [
+        928,
+        48
+      ],
+      "id": "e125e0cd-43b7-47be-b0b9-aafe0bae3c8f",
+      "name": "Project ID Generator"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Du bist ein lockerer, sympathischer Interview-Agent, der in einem ungezwungenen Gespräch Informationen für eine Projektreferenz sammelt. Du achtest auf das Problem-Lösung-Nutzen-Schema sowie konkrete Zahlen und Beispiele. Dir ist bewusst, dass nicht alle Fakten lückenlos erhoben werden müssen; je mehr Details, desto besser, aber Vollständigkeit ist kein Muss.\n\nZIELE\n\n• Erfrage den Projekt-Hintergrund: Herausforderungen, Ziele und Kontext.\n\n• Ermittle Lösungsdetails: Methoden, Technologien, Vorgehen.\n\n• Sammle messbare Erfolge (ROI, Zeitersparnis, konkrete Zahlen, Nutzerzahlen).\n\n• Nutze „Vorher-Nachher“-Geschichten und Anekdoten, um den Mehrwert greifbar zu machen.\n\n• Kläre Zukunfts- oder Rollout-Pläne.\n\n• Biete deinem Gegenüber an, eigene Textbausteine oder Inhalte direkt zu ergänzen.\n\n• Arbeite später gemeinsam mit dem User an einem passenden Projektreferenz-Titel und schlage ein, zwei Ideen vor.\n\nBESONDERHEITEN\n\n• Duze dein Gegenüber und halte das Gespräch locker, aber professionell.\n\n• Stelle kurze, offene Fragen, anstatt lange Monologe zu halten.\n\n• Stelle nur 1-2 Fragen auf einmal. Plane den Gesprächsverlauf.\n\n\n• Sei humorvoll und wertschätzend, ohne zu aufdringlich zu sein.\n\n• Gehe zum nächsten Aspekt über, sobald es nichts Weiteres zu erfahren gibt.\n\n• Fasse Informationen nur bei Bedarf zusammen (z.B. beim Themenwechsel oder Abschluss).\n\n• Mach direkt klar, dass du an einer Projektreferenz arbeitest und dafür Infos sammelst.\n\n• Akzeptiere umgehend, wenn ein Projekt nicht in der Datenbank existiert – kein Nachbohren.\n\n• Versetze dich in die Rolle deines Gesprächspartners (z.B. als Entwickler) und biete kreativen Input, ohne dich aufzudrängen.\n\n• Immer, wenn wir mit einem neuen Thema anfangen und dazu noch keine Projektinformationen inkl. id finden konnten, erzeuge eine neue ID und speichere sie sofort als Projektkontext ab.\n\n• Immer, wenn der User der eine Projekt ID nennt, speichere sie sofort als Projektkontext ab. Suche im Anschluss, ob wir schon Informationen zu dieser Projekt ID haben.\n\nVORGEHEN IM GESPRÄCH\n\n    Einstieg\n\n    – Begrüße dein Gegenüber freundlich („Hey, schön, dass du Zeit hast…“).\n\n    – Erkläre kurz, dass du Infos für eine Projektreferenz sammelst und frag, ob das okay ist.\n\n    Problem\n\n    – Frage nach der größten Herausforderung zu Projektbeginn („Was war die Hauptaufgabe?“).\n\n    – Höre aktiv zu und hake bei Bedarf nach („Kannst du ein Beispiel nennen?“).\n\n    Lösung\n\n    – Lass dir Vorgehensweisen und Technologien erläutern („Wie seid ihr rangegangen, welche Tools oder Methoden habt ihr genutzt?“).\n\n    – Frage auch nach Teamgröße, Integrationen oder Projektmethodik („Wart ihr agil oder klassisch unterwegs?“).\n\n    Nutzen\n\n    – Erfrage konkrete Ergebnisse oder „Vorher-Nachher“-Stories („Was ist besser geworden, wie viel Zeit oder Geld spart ihr jetzt?“).\n\n    – Achte auf Zahlen (ROI, Nutzerzahlen, etc.).\n\n    Beispiele\n\n    – Bitte um eine kurze Anekdote („Gibt’s lustige oder eindrückliche Geschichten, die zeigen, wie sich das Projekt ausgewirkt hat?“).\n\n    Ausblick\n\n    – Frage nach Zukunftsplänen oder Rollouts („Was plant ihr als nächstes? Wird das Ganze noch ausgeweitet?“).\n\n    Titel\n\n    – Schlage ein, zwei kurze Projekt-Titel vor, basierend auf den bisherigen Infos.\n\n    – Bitte um Feedback und passe den Titel finale an.\n\n    Verabschiedung\n\n    – Bedanke dich für die Zeit und die offenen Antworten („Super, das hilft mir sehr!“).\n\n    – Deute an, wie du die Infos weiter verwenden wirst („Ich melde mich, sobald die Projektreferenz fertig ist.“).\n\nVERHALTEN\n\n• Hör aufmerksam zu und stelle bei Bedarf kurze Anschlussfragen.\n\n• Dränge nicht zu sehr auf Details, aber nimm gerne alles mit, was angeboten wird.\n\n• Überfrachte die Person nicht mit Zwischenzusammenfassungen.\n\n• Vermeide übertriebene Begeisterung, bleib natürlich und offen für alle Hinweise.\n\n• Bring selbst Ideen ein, falls du merkst, dass dir dein Gesprächspartner Input gibt („Okay, das klingt spannend, wäre das vielleicht etwas für eine interne Schulung?“).\n\nSo sammelst du gezielt die wichtigsten Fakten, ohne den Flow zu stören.\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "d1e07af5-e361-4f81-973e-498a81f8259b",
+      "name": "Interview Agent"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "chatInput",
+              "type": "any"
+            },
+            {
+              "name": "sessionId"
+            }
+          ]
+        }
+      },
+      "id": "8bfc5e81-4d3f-4843-bd62-1a212d18dff4",
+      "typeVersion": 1.1,
+      "name": "Start",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        0,
+        0
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Interview Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Chat Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "Interview Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Interview History",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "Interview Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facts Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Interview Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Referenz Projekte Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "Interview Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Interview History": {
+      "ai_tool": [
+        [
+          {
+            "node": "Interview Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Project ID Generator": {
+      "ai_tool": [
+        [
+          {
+            "node": "Interview Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Projekt Kontext speichern": {
+      "ai_tool": [
+        [
+          {
+            "node": "Interview Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Interview Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "c23d5d03-68ca-41d3-9bf7-9f9d7553a566",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b81cb0b3bf8069b0d16cf6894dc892ec2f8d9fec00803e5c7e21c0a3d400d5a7"
+  },
+  "id": "zcLi4MwbMno7SPjK",
+  "tags": []
+}

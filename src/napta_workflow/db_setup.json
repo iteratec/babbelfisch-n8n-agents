@@ -1,0 +1,1130 @@
+{
+  "name": "db_setup",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        16
+      ],
+      "id": "7e419f00-7cda-405c-944a-77cc2a103551",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "CREATE TABLE IF NOT EXISTS clients (\n  id   TEXT PRIMARY KEY,         \n  name TEXT NOT NULL\n);\n \nCREATE TABLE IF NOT EXISTS projects (\n  id                            TEXT PRIMARY KEY,  \n  name                          TEXT NOT NULL,\n  client_id                     TEXT REFERENCES clients(id),\n  total_projected_staffed_days NUMERIC,\n  start_date                    TEXT,\n  end_date                      TEXT,\n  status                        TEXT,\n  description                   TEXT\n);\n \nCREATE TABLE IF NOT EXISTS users (\n  id         TEXT PRIMARY KEY,    \n  first_name TEXT NOT NULL,\n  last_name  TEXT NOT NULL,\n  email      TEXT\n);\n \nCREATE TABLE IF NOT EXISTS skills (\n  id          TEXT PRIMARY KEY,      \n  name        TEXT NOT NULL,\n  users_count NUMERIC\n);\n \nCREATE TABLE IF NOT EXISTS user_skills (\n  user_id  TEXT REFERENCES users(id)  ON DELETE CASCADE,\n  skill_id TEXT REFERENCES skills(id) ON DELETE CASCADE,\n  grade    NUMERIC,                   \n  PRIMARY KEY (user_id, skill_id)\n);\n \nCREATE TABLE IF NOT EXISTS user_projects (\n  id                       TEXT PRIMARY KEY,\n  user_id                  TEXT REFERENCES users(id)    ON DELETE CASCADE,\n  project_id               TEXT REFERENCES projects(id) ON DELETE CASCADE,\n  staffed_days             NUMERIC,\n  requirements_description TEXT\n);",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        -752,
+        16
+      ],
+      "id": "5ba8824b-eb59-41ce-873c-e8f34eab177e",
+      "name": "Execute a SQL query",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "destinationKey": "records",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        16
+      ],
+      "id": "c9ea1e6c-062c-458d-8620-00bf506f4573",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "clients",
+          "mode": "list",
+          "cachedResultName": "clients"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{$json.id}}",
+            "name": "={{$json.name}}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "industry",
+              "displayName": "industry",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": true
+            },
+            {
+              "id": "country",
+              "displayName": "country",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1728,
+        16
+      ],
+      "id": "16710835-34af-4792-9e82-5569115706e3",
+      "name": "Insert or update rows in a table",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            id: d?.id,                  \n            name: d?.attributes?.name,  \n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1504,
+        16
+      ],
+      "id": "f4607e13-6f1b-45b5-b341-f949f51047de",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "destinationKey": "records",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        192
+      ],
+      "id": "db072867-f8de-4883-b842-9c07ddf325db",
+      "name": "Extract from File1"
+    },
+    {
+      "parameters": {
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            id: d?.id,                  \n            name: d?.attributes?.name,  \n            client_id: d?.attributes?.client_id,\n            total_projected_staffed_days: d?.attributes?.total_projected_staffed_days,\n            start_date: d?.attributes?.start_date,\n            end_date: d?.attributes?.end_date,\n            status: d?.attributes?.status,\n            description: d?.attributes.description,\n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1504,
+        192
+      ],
+      "id": "a4563fb7-6742-4be9-9a0f-23fe4af0df2e",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "destinationKey": "records",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        368
+      ],
+      "id": "81fedeb9-1802-47bd-ae70-145611375d14",
+      "name": "Extract from File2"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "skills",
+          "mode": "list",
+          "cachedResultName": "skills"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "name": "={{ $json.name }}",
+            "users_count": "={{ $json.users_count }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "users_count",
+              "displayName": "users_count",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1728,
+        368
+      ],
+      "id": "890464a6-3af3-4ad9-90b9-0820e80f1477",
+      "name": "Insert or update rows in a table2",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            id: d?.id,                  \n            name: d?.attributes?.name,  \n            users_count: d?.attributes?.users_count,\n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1504,
+        368
+      ],
+      "id": "4de26034-565c-4ab1-bcaa-efc6bd8fdc17",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "users",
+          "mode": "list",
+          "cachedResultName": "users"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "email": "={{ $json.email }}",
+            "first_name": "={{ $json.first_name }}",
+            "last_name": "={{ $json.last_name }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "first_name",
+              "displayName": "first_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "last_name",
+              "displayName": "last_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1728,
+        528
+      ],
+      "id": "0de308a1-304f-44db-88fe-73997d665783",
+      "name": "Insert or update rows in a table3",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            id: d?.id,                  \n            last_name: d?.attributes?.last_name,  \n            first_name: d?.attributes?.first_name,\n            email: d?.attributes?.email\n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1504,
+        528
+      ],
+      "id": "8f4a932b-820a-48c6-90b1-8604defb1a07",
+      "name": "Code3"
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "destinationKey": "records",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        704
+      ],
+      "id": "a4d75f0f-b937-4671-baf1-a0e1efd87264",
+      "name": "Extract from File4"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "user_skills",
+          "mode": "list",
+          "cachedResultName": "user_skills"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "user_id": "={{ $json.user_id }}",
+            "skill_id": "={{ $json.skill_id }}",
+            "grade": "={{ $json.grade }}"
+          },
+          "matchingColumns": [
+            "user_id",
+            "skill_id"
+          ],
+          "schema": [
+            {
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "skill_id",
+              "displayName": "skill_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "grade",
+              "displayName": "grade",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1728,
+        704
+      ],
+      "id": "78c6b60e-e158-4dfd-b0ac-806c4822c734",
+      "name": "Insert or update rows in a table4",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            grade: d?.attributes?.grade,                  \n            user_id: d?.attributes?.user_id,  \n            skill_id: d?.attributes?.skill_id  \n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1504,
+        704
+      ],
+      "id": "8a099179-795d-45f2-9722-c2fb6976d5f2",
+      "name": "Code4"
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "destinationKey": "records",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        880
+      ],
+      "id": "ca017afe-c3a9-418b-b08e-bbbfba6ec874",
+      "name": "Extract from File5"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "user_projects",
+          "mode": "list",
+          "cachedResultName": "user_projects"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "user_id": "={{ $json.user_id }}",
+            "project_id": "={{ $json.project_id }}",
+            "staffed_days": "={{ $json.staffed_days }}",
+            "requirements_description": "={{ $json.requirements_description }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "project_id",
+              "displayName": "project_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "staffed_days",
+              "displayName": "staffed_days",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "requirements_description",
+              "displayName": "requirements_description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1728,
+        880
+      ],
+      "id": "b8c16211-93bd-4a42-8461-73500f7f712f",
+      "name": "Insert or update rows in a table5",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            id: d?.id,                  \n            user_id: d?.attributes?.user_id,  \n            project_id: d?.attributes?.project_id,  \n            staffed_days: d?.attributes?.staffed_days,\n            requirements_description: d?.attributes?.requirements_description,\n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1504,
+        880
+      ],
+      "id": "24afa24b-9981-4075-8ebf-1864ef2dd85d",
+      "name": "Code5"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "projects",
+          "mode": "list",
+          "cachedResultName": "projects"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "name": "={{ $json.name }}",
+            "client_id": "={{ $json.client_id }}",
+            "total_projected_staffed_days": "={{ $json.total_projected_staffed_days }}",
+            "start_date": "={{ $json.start_date }}",
+            "end_date": "={{ $json.end_date }}",
+            "status": "=  {{ $json.status }}",
+            "description": "={{ $json.description }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "client_id",
+              "displayName": "client_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "total_projected_staffed_days",
+              "displayName": "total_projected_staffed_days",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "start_date",
+              "displayName": "start_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "end_date",
+              "displayName": "end_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "description",
+              "displayName": "description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1728,
+        192
+      ],
+      "id": "6aaf7724-b3c0-496f-b268-1418ffb22252",
+      "name": "Insert or update rows in projects",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fileSelector": "/imports/napta-clients-complete-2025-09-01.json",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        992,
+        16
+      ],
+      "id": "cdd85648-9bfb-4081-9ef4-eb2e47a0c3f5",
+      "name": "Read Clients from Disk"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/imports/napta-projects-complete-2025-09-01.json",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        992,
+        192
+      ],
+      "id": "824cb86a-031e-4c79-9391-e8824a7c36be",
+      "name": "Read Projects from Disk"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/imports/napta-skills-complete-2025-09-09.json",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        992,
+        368
+      ],
+      "id": "af287f6a-3c3f-4cd7-9120-c6476ab00408",
+      "name": "Read Skills from Disk"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/imports/napta-users-complete-2025-09-01.json",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        992,
+        528
+      ],
+      "id": "b16f686d-c1e3-4268-8d53-976e7083a737",
+      "name": "Read Users from Disk"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/imports/napta-user-projects-complete-2025-09-01.json",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        992,
+        880
+      ],
+      "id": "d4f4744b-611f-4998-bfd1-afec01052a18",
+      "name": "Read User Projects from Disk"
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "destinationKey": "records",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        528
+      ],
+      "id": "5f1b65f4-1e18-43e2-ad21-8215e56a1dd8",
+      "name": "Extract from File3"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/imports/napta-user-skills-complete-2025-09-01.json",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        992,
+        704
+      ],
+      "id": "f325232f-f5fd-4fd3-a299-c3e4d2f0b3aa",
+      "name": "Read User Skills from Disk4"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a SQL query": {
+      "main": [
+        [
+          {
+            "node": "Read Clients from Disk",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Users from Disk",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read User Skills from Disk4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Skills from Disk",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read User Projects from Disk",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Projects from Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert or update rows in a table": {
+      "main": [
+        []
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Insert or update rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File1": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Insert or update rows in projects",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File2": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "Insert or update rows in a table2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code3": {
+      "main": [
+        [
+          {
+            "node": "Insert or update rows in a table3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File4": {
+      "main": [
+        [
+          {
+            "node": "Code4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code4": {
+      "main": [
+        [
+          {
+            "node": "Insert or update rows in a table4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File5": {
+      "main": [
+        [
+          {
+            "node": "Code5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code5": {
+      "main": [
+        [
+          {
+            "node": "Insert or update rows in a table5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Clients from Disk": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Projects from Disk": {
+      "main": [
+        [
+          {
+            "node": "Extract from File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Skills from Disk": {
+      "main": [
+        [
+          {
+            "node": "Extract from File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Users from Disk": {
+      "main": [
+        [
+          {
+            "node": "Extract from File3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read User Projects from Disk": {
+      "main": [
+        [
+          {
+            "node": "Extract from File5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert or update rows in projects": {
+      "main": [
+        []
+      ]
+    },
+    "Insert or update rows in a table2": {
+      "main": [
+        []
+      ]
+    },
+    "Insert or update rows in a table3": {
+      "main": [
+        []
+      ]
+    },
+    "Insert or update rows in a table4": {
+      "main": [
+        []
+      ]
+    },
+    "Insert or update rows in a table5": {
+      "main": [
+        []
+      ]
+    },
+    "Extract from File3": {
+      "main": [
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read User Skills from Disk4": {
+      "main": [
+        [
+          {
+            "node": "Extract from File4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "435bc031-a4ae-4567-b241-f63fd75891c6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b81cb0b3bf8069b0d16cf6894dc892ec2f8d9fec00803e5c7e21c0a3d400d5a7"
+  },
+  "id": "MIcm6C1mQckGeJoA",
+  "tags": []
+}

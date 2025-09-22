@@ -11,6 +11,8 @@ services:
     restart: always
     env_file:
       - local.env
+    ports:
+      - "5432:5432"
     volumes:
       - db_storage:/var/lib/postgresql/data
       - ./init-data.sh:/docker-entrypoint-initdb.d/init-data.sh
@@ -87,6 +89,7 @@ services:
       - "5678:5678"
     volumes:
       - n8n_storage:/home/node/.n8n
+      - ${COMPOSE_PROJECT_DIR}/../src/napta_workflow/napta_files:/imports:ro
     depends_on:
       postgres:
         condition: service_healthy
