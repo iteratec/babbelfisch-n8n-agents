@@ -134,7 +134,7 @@
     },
     {
       "parameters": {
-        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            id: d?.id,                  \n            name: d?.attributes?.name,  \n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n\n  return inputItems\n    .flatMap(({ json }) => json?.records ?? [])\n    .flatMap(r => r?.data?.data ?? [])\n    .map(d => ({\n      json: {\n        id: d?.id,                  \n        name: d?.attributes?.name,  \n      },\n    }));\n}\n\nreturn main();"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -162,7 +162,7 @@
     },
     {
       "parameters": {
-        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            id: d?.id,                  \n            name: d?.attributes?.name,  \n            client_id: d?.attributes?.client_id,\n            total_projected_staffed_days: d?.attributes?.total_projected_staffed_days,\n            start_date: d?.attributes?.start_date,\n            end_date: d?.attributes?.end_date,\n            status: d?.attributes?.status,\n            description: d?.attributes.description,\n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  \n  return inputItems\n    .flatMap(({ json }) => json?.records ?? [])\n    .flatMap(r => r?.data?.data ?? [])\n    .map(d => ({\n      json: {\n        id: d?.id,                  \n        name: d?.attributes?.name,  \n        client_id: d?.attributes?.client_id,\n        total_projected_staffed_days: d?.attributes?.total_projected_staffed_days,\n        start_date: d?.attributes?.start_date,\n        end_date: d?.attributes?.end_date,\n        status: d?.attributes?.status,\n        description: d?.attributes.description,\n          },\n    }));\n}\n\nreturn main();"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -264,7 +264,7 @@
     },
     {
       "parameters": {
-        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            id: d?.id,                  \n            name: d?.attributes?.name,  \n            users_count: d?.attributes?.users_count,\n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n\n  return inputItems\n    .flatMap(({ json }) => json?.records ?? [])\n    .flatMap(r => r?.data?.data ?? [])\n    .map(d => ({\n      json: {\n        id: d?.id,                  \n        name: d?.attributes?.name,  \n        users_count: d?.attributes?.users_count,\n      },\n    }));\n}\n\nreturn main();"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -360,7 +360,7 @@
     },
     {
       "parameters": {
-        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            id: d?.id,                  \n            last_name: d?.attributes?.last_name,  \n            first_name: d?.attributes?.first_name,\n            email: d?.attributes?.email\n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n\n  return inputItems\n    .flatMap(({ json }) => json?.records ?? [])\n    .flatMap(r => r?.data?.data ?? [])\n    .map(d => ({\n      json: {\n        id: d?.id,                  \n        last_name: d?.attributes?.last_name,  \n        first_name: d?.attributes?.first_name,\n        email: d?.attributes?.email\n      },\n    }));\n}\n\nreturn main();"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -464,7 +464,7 @@
     },
     {
       "parameters": {
-        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            grade: d?.attributes?.grade,                  \n            user_id: d?.attributes?.user_id,  \n            skill_id: d?.attributes?.skill_id  \n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n\n  return inputItems\n    .flatMap(({ json }) => json?.records ?? [])\n    .flatMap(r => r?.data?.data ?? [])\n    .map(d => ({\n      json: {\n        grade: d?.attributes?.grade,\n        user_id: d?.attributes?.user_id,\n        skill_id: d?.attributes?.skill_id,\n      },\n    }));\n}\n\nreturn main();"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -587,7 +587,7 @@
     },
     {
       "parameters": {
-        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n  const out = [];\n\n  for (const { json } of inputItems) {\n    const records = json?.records ?? [];\n    for (const r of records) {\n      const arr = r?.data?.data ?? [];\n      for (const d of arr) {\n        out.push({\n          json: {\n            id: d?.id,                  \n            user_id: d?.attributes?.user_id,  \n            project_id: d?.attributes?.project_id,  \n            staffed_days: d?.attributes?.staffed_days,\n            requirements_description: d?.attributes?.requirements_description,\n          },\n        });\n      }\n    }\n  }\n\n  return out;\n}\n\nreturn main();"
+        "jsCode": "async function main() {\n  const inputItems = await $input.all();\n\n  return inputItems\n    .flatMap(({ json }) => json?.records ?? [])\n    .flatMap(r => r?.data?.data ?? [])\n    .map(d => ({\n      json: {\n        id: d?.id,\n        user_id: d?.attributes?.user_id,\n        project_id: d?.attributes?.project_id,\n        staffed_days: d?.attributes?.staffed_days,\n        requirements_description: d?.attributes?.requirements_description,\n      },\n    }));\n}\n\nreturn main();"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -1120,7 +1120,7 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "435bc031-a4ae-4567-b241-f63fd75891c6",
+  "versionId": "518555e4-b7dc-44d0-9619-32524ebbf88e",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "b81cb0b3bf8069b0d16cf6894dc892ec2f8d9fec00803e5c7e21c0a3d400d5a7"
