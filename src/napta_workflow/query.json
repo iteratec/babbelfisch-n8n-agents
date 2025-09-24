@@ -1,0 +1,865 @@
+{
+  "name": "query",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT\n  p.id   AS project_id,\n  p.name AS project_name,\n  p.total_projected_staffed_days AS total_project_days,\n  p.start_date AS project_start,\n  p.end_date AS project_end,\n  p.status AS project_status,\n  p.description AS project_description,\n  c.id   AS client_id,\n  c.name AS client_name,\n  u.id   AS user_id,\n  up.staffed_days AS staffed_days,\n  up.requirements_description AS requirements,\n  ARRAY_REMOVE(ARRAY_AGG(DISTINCT s.name ORDER BY s.name), NULL) AS skills\nFROM projects p\nJOIN clients c        ON c.id = p.client_id\nJOIN user_projects up ON up.project_id = p.id\nJOIN users u          ON u.id = up.user_id\nLEFT JOIN user_skills us ON us.user_id = u.id\nLEFT JOIN skills s       ON s.id = us.skill_id\nWHERE p.id = $1\nGROUP BY\n  p.id, p.name,\n  c.id, c.name,\n  u.id, u.first_name, u.last_name,\n  up.staffed_days, up.requirements_description\nORDER BY u.last_name, u.first_name;",
+        "options": {
+          "queryReplacement": "={{ $json.id }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        2448,
+        -272
+      ],
+      "id": "942eb23a-efc7-4bef-b619-7d3abf81d003",
+      "name": "Execute a SQL query",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "aws/claude-sonnet-4",
+          "mode": "list",
+          "cachedResultName": "aws/claude-sonnet-4"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        2896,
+        -96
+      ],
+      "id": "780c8b66-cd0b-46e5-9e58-b2d41db7c559",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "5G18H8IWRnUwHR7B",
+          "name": "IteraGPT"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        2672,
+        -272
+      ],
+      "id": "956f3d3e-a262-417d-b38c-b3063a4377a5",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "options": {
+          "responseMode": "responseNodes"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -720,
+        -336
+      ],
+      "id": "64dcd5f8-be5f-4eef-867d-a7ff9c38c55c",
+      "name": "When chat message received",
+      "webhookId": "d37ca6b3-df34-427c-b7d3-13d17950aebb"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "aws/claude-sonnet-4",
+          "mode": "list",
+          "cachedResultName": "aws/claude-sonnet-4"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -496,
+        -112
+      ],
+      "id": "1bf573a7-4cfd-4cb7-b5b4-df77dd2de7d0",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "5G18H8IWRnUwHR7B",
+          "name": "IteraGPT"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "aws/claude-sonnet-4",
+          "mode": "list",
+          "cachedResultName": "aws/claude-sonnet-4"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1280,
+        208
+      ],
+      "id": "c848a4bf-4bc2-4bd3-b97f-a5f3b5e73fab",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "5G18H8IWRnUwHR7B",
+          "name": "IteraGPT"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        976,
+        -32
+      ],
+      "id": "41da1332-9439-470d-ab3f-d590cb263f4c",
+      "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Du klassifizierst eine Nutzereingabe für unsere Postgres-DB.\nAntworte NUR mit folgendem JSON, ohne Text davor oder danach:\n\n{\"type\":\"id\"|\"name\",\"value\":\"<bereinigter Wert>\"}\n\nRegeln:\n- \"id\": wenn es sich sehr wahrscheinlich um eine Projektnummer handelt (nur Ziffern, evtl. Whitespace).\n- \"name\": ansonsten.\n- \"value\": getrimmt. Keine SQL oder Sonderzeichen hinzufügen.\n- Keine freien Texte, nur exakt das JSON."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -496,
+        -336
+      ],
+      "id": "7b5cfc71-0e26-41af-ad1d-fb690187c63e",
+      "name": "Classify Input"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const raw = $json.output;\nlet parsed = {};\n\ntry {\n  parsed = typeof raw === 'string' ? JSON.parse(raw) : raw;\n} catch (e) {\n  parsed = {};\n}\n\nreturn {\n  ai: parsed\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -144,
+        -336
+      ],
+      "id": "3409ae78-cfed-4ce5-8bdd-95478755b12c",
+      "name": "Parse AI Output"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "925d52d4-8d9b-4355-b23e-e87a66a1c7f3",
+              "leftValue": "={{ $json.ai.type }}",
+              "rightValue": "id",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        80,
+        -336
+      ],
+      "id": "32d721b4-650d-4351-901b-289968ac42a5",
+      "name": "Id or Name"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT EXISTS (SELECT 1 FROM projects p WHERE p.name = $1) AS found;\n  ",
+        "options": {
+          "queryReplacement": "=$1 = {{ $json.ai.value }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        304,
+        -144
+      ],
+      "id": "cf2dc50b-09b2-40d7-adc8-121fa4525b43",
+      "name": "Find Name",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "24b6c51e-199a-41e5-a6b2-d16fbd299dbd",
+              "leftValue": "={{ $json.found }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        528,
+        -144
+      ],
+      "id": "f5e877b8-058b-4bf8-bbee-f5b313675277",
+      "name": "Exists Name"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT name \nFROM projects",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        752,
+        -32
+      ],
+      "id": "5dad6b67-d307-4f8a-8f3e-7066d2f91480",
+      "name": "Find All Projects",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Projektliste (nur diese verwenden):\n```json\n{{ JSON.stringify($json.data, null, 2) }}\n```\n\nVom Nutzer eingegebenes Projekt / Query:\n{{ $('Id or Name').item.json.ai.value }}\n\nGib nur das JSON im gewünschten Format zurück.",
+        "options": {
+          "systemMessage": "System-Prompt\n\nDu bist ein Matching-Assistent für Projektnamen.\nAufgabe: Finde in einer übergebenen Liste von Projekten den besten Namens-Match zur Query.\n\nWichtig:\n\t•\tNutze nur die übergebene Liste.\n\t•\tAntworte ausschließlich mit gültigem JSON. Keine Erklärungen, kein Text.\n\t•\tScoring 1–100:\n\t•\t100 = exakt gleich (case-insensitive)\n\t•\t95–99 = nur kleine Unterschiede (Sonderzeichen, Umlaute, Leerzeichen)\n\t•\t80–94 = sehr ähnlich (Tippfehler, Abkürzungen, Reihenfolge)\n\t•\t<80 = schwach bis kein Match\n\t•\tWähle nur den besten Treffer.\n\nAusgabeformat (immer nur JSON):\n{\n  \"name\": \"<name>\",\n  \"score\": <1-100>\n}\n\nAuch wenn es sehr weit entfernt ist, gebe ein anderes Projekt aus mit name und score"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        -32
+      ],
+      "id": "e8f9eed2-39db-464b-84cb-e278d3b664e4",
+      "name": "Find Similar Name"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const raw = $json.output;\nlet parsed = {};\n\ntry {\n  parsed = typeof raw === 'string' ? JSON.parse(raw) : raw;\n} catch (e) {\n  parsed = {};\n}\n\nreturn {\n  ausgabe: parsed\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1552,
+        -32
+      ],
+      "id": "842fdb10-199a-42e9-942b-4df69585354b",
+      "name": "Parse AI Output1"
+    },
+    {
+      "parameters": {
+        "message": "=Most likely project:\n👉 **{{ $json.ausgabe.name }}** ({{ $json.ausgabe.score }} Punkte)\n\nIf correct, type **\"yes\"**.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chat",
+      "typeVersion": 1,
+      "position": [
+        1776,
+        -32
+      ],
+      "id": "d2b44fd9-90fa-44c3-a124-759f3f052ddb",
+      "name": "Follow-up"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "24b6c51e-199a-41e5-a6b2-d16fbd299dbd",
+              "leftValue": "={{ $json.chatInput }}",
+              "rightValue": "yes",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "f759ae4d-addc-4cba-adf6-5e379a350e13",
+              "leftValue": "={{ $json.chatInput }}",
+              "rightValue": "Ja",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "3cd88bef-6eab-470d-880c-c8d6300c10ed",
+              "leftValue": "={{ $json.chatInput }}",
+              "rightValue": "ja",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "630dcd00-3aea-4ddb-ad59-2ef97cbc76a4",
+              "leftValue": "={{ $json.chatInput }}",
+              "rightValue": "Yes",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2000,
+        -32
+      ],
+      "id": "ba0af4bf-4c6f-4239-8ab8-27c1ea24f56e",
+      "name": "Accept Or Deny"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT\n  EXISTS (SELECT 1 FROM projects p WHERE p.id = $1) AS found\n  ",
+        "options": {
+          "queryReplacement": "=$1 = {{ $json.ai.value }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1776,
+        -656
+      ],
+      "id": "f03df327-dd7f-4cae-9d67-b84305ac7725",
+      "name": "Find Id",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "24b6c51e-199a-41e5-a6b2-d16fbd299dbd",
+              "leftValue": "={{ $json.found }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2000,
+        -656
+      ],
+      "id": "e22d8073-fa7a-4505-ac5c-5058ef5551b0",
+      "name": "Exists Id"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT p.id FROM projects p WHERE p.id = $1",
+        "options": {
+          "queryReplacement": "=$1 = {{ $('Parse AI Output').item.json.ai.value }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        2224,
+        -656
+      ],
+      "id": "f5a1414d-687e-4cbd-87b3-835aa2a1c142",
+      "name": "Id",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "message": "=No project found with: '{{ $('Parse AI Output').item.json.ai.type}}: {{ $('Parse AI Output').item.json.ai.value }}'",
+        "waitUserReply": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chat",
+      "typeVersion": 1,
+      "position": [
+        2176,
+        -432
+      ],
+      "id": "12688e80-68c7-4135-b9ad-0a7c5b6588bc",
+      "name": "Nothing Found"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT p.id FROM projects p WHERE p.name = $1",
+        "options": {
+          "queryReplacement": "=$1 = {{ $('Parse AI Output').item.json.ai.value }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        2240,
+        -240
+      ],
+      "id": "3d376254-b6d4-45f7-b7e9-c07da7f16bcc",
+      "name": "Id1",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT p.id FROM projects p WHERE p.name = $1",
+        "options": {
+          "queryReplacement": "=$1 = {{ $('Parse AI Output1').item.json.ausgabe.name }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        2224,
+        32
+      ],
+      "id": "819d941a-0822-4862-ba62-384ac7c8e9bd",
+      "name": "Id2",
+      "credentials": {
+        "postgres": {
+          "id": "puRFxsk5eRPqRLyM",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=# Project Role & Technology Inference Prompt\n\nYou are given structured data from a project database.\n\n## Input\n```json\n{{ JSON.stringify($json.data, null, 2) }}\n```\n\n---\n\n## Expected Schema (derived from SQL query)\n\nThe input is an **array of rows**; each row corresponds to one **user’s assignment on the same project** (project/client fields repeat per user).\n\n```ts\ntype Input = Array<{\n  // Project (repeats on every row)\n  project_id: string;                  // p.id\n  project_name: string;                // p.name\n  total_project_days: number | null;   // p.total_projected_staffed_days\n  project_start: string | null;        // p.start_date (ISO date string)\n  project_end: string | null;          // p.end_date (ISO date string)\n  project_status: string | null;       // p.status\n  project_description: string | null;  // p.description\n\n  // Client (repeats on every row)\n  client_id: string;                   // c.id\n  client_name: string;                 // c.name\n\n  // User assignment (varies per row)\n  user_id: string;                     // u.id\n  staffed_days: number | null;         // up.staffed_days\n  requirements: string | null;         // up.requirements_description\n\n  // Aggregated user skills for this user\n  skills: string[];                    // DISTINCT s.name, sorted asc, nulls removed\n}>;\n```\n\n### Notes & Constraints\n- **One row per user** on the project; `project_*` and `client_*` repeat.\n- `skills` is already **distinct**, **sorted (A→Z)**, and **null-free** per user.\n- Names (`u.first_name`, `u.last_name`) are **not selected** in this query; only `user_id` is available.\n- **Do not output user IDs in the final answer.** Evidence should mention *skills only*, not IDs.\n- Dates are strings (likely `YYYY-MM-DD`); treat as **optional**/nullable.\n- `total_project_days`, `staffed_days` may be `null`; don’t assume zeros.\n- Expect extra/missing fields defensively; proceed best-effort.\n\n### Interpretation Guidelines\n- Treat **each row** as one **person** with `skills` and `staffed_days`.\n- When scoring support for roles/technologies, count **distinct users**.\n- Evidence should reference **skills** (not user IDs or other identifiers).\n- If you later add names to the SELECT, you may extend rows with `user_first_name` / `user_last_name` (optional).\n\n---\n\n## Task\nInfer from *only the provided input*:\n\n1. **Project Summary** — a brief natural language description of what the project is likely about.  \n2. **Likely Roles** on the project.  \n3. **Likely Technologies** used.  \n\n---\n\n## Rules\n- **Use only input content.** No outside facts. You may normalize synonyms (e.g., “TS” → “TypeScript”, “Postgres” → “PostgreSQL”, “GCP” → “Google Cloud”) and stem/lower/trim.  \n- **Evidence-first.** For each item, cite which skills support it (not user IDs).  \n- **Scoring:**  \n  - `support_count`: number of distinct users backing the item.  \n  - `support_mentions`: number of matching skills (after normalization).  \n  - `confidence`: `low` | `medium` | `high`.  \n- **Limits:** Up to 5 roles and 8 technologies.  \n- **Ordering:** Sort by `support_count` ↓, then `support_mentions` ↓, then name ↑.  \n- **Ambiguity:** If signals are weak, list under “Possible but Uncertain.”  \n- **Canonical naming:**  \n  - Roles: “Frontend Developer”, “Backend Developer”, “Data Engineer”, “QA Engineer”, “Scrum Master”, “DevOps Engineer”, “Product Manager”.  \n  - Tech: “React”, “Node.js”, “TypeScript”, “Django”, “PostgreSQL”, “MongoDB”, “AWS”, “Azure”, “GCP”, “Docker”, “Kubernetes”, “Terraform”.  \n- **Privacy:** Don’t fabricate or expose PII beyond fields already present. Do **not** output user IDs.  \n\n---\n\n## Output\nReturn a **human-readable Markdown report** with these sections:\n\n### Example format\n\n# Project Role & Technology Inference\n\n## Project Summary\nThis looks like a web application project with a React frontend and a Django/PostgreSQL backend, likely deployed to a cloud provider. The team includes frontend and backend engineers, with some QA involvement.\n\n## Likely Roles\n- **Frontend Developer** (3 users, high confidence) – evidence: React, TypeScript, Next.js.  \n- **Backend Developer** (2 users, medium confidence) – evidence: Node.js, Python, Django.  \n\n## Likely Technologies\n- **React** (3 mentions, high confidence).  \n- **TypeScript** (2 mentions, medium confidence).  \n- **Django** (1 mention, medium confidence).  \n- **PostgreSQL** (1 mention, medium confidence).  \n\n## Possible but Uncertain\n- **Role**: QA Engineer (1 user).  \n- **Technology**: GraphQL (implied, not explicit).  \n\n## Assumptions\n- Mapped “TS” → “TypeScript”.  \n- Considered “Next.js” as implying React.  \n",
+        "options": {
+          "maxIterations": 5,
+          "returnIntermediateSteps": true
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        2896,
+        -272
+      ],
+      "id": "d6445507-81e4-4f3c-8aab-1ab76c47592d",
+      "name": "Find Project Roles and Technologies"
+    },
+    {
+      "parameters": {
+        "message": "={{ $json.output }}",
+        "waitUserReply": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chat",
+      "typeVersion": 1,
+      "position": [
+        3248,
+        -272
+      ],
+      "id": "21eb5cbe-ff95-44f1-af71-38c8fd845c6f",
+      "name": "Answer"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Execute a SQL query": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Find Project Roles and Technologies",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Find Project Roles and Technologies",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Classify Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Classify Input",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Find Similar Name",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "Find Similar Name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Input": {
+      "main": [
+        [
+          {
+            "node": "Parse AI Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse AI Output": {
+      "main": [
+        [
+          {
+            "node": "Id or Name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Id or Name": {
+      "main": [
+        [
+          {
+            "node": "Find Id",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Find Name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Name": {
+      "main": [
+        [
+          {
+            "node": "Exists Name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Exists Name": {
+      "main": [
+        [
+          {
+            "node": "Id1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Find All Projects",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find All Projects": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Similar Name": {
+      "main": [
+        [
+          {
+            "node": "Parse AI Output1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse AI Output1": {
+      "main": [
+        [
+          {
+            "node": "Follow-up",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Follow-up": {
+      "main": [
+        [
+          {
+            "node": "Accept Or Deny",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Accept Or Deny": {
+      "main": [
+        [
+          {
+            "node": "Id2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Nothing Found",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Id": {
+      "main": [
+        [
+          {
+            "node": "Exists Id",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Exists Id": {
+      "main": [
+        [
+          {
+            "node": "Id",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Nothing Found",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Id": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Id1": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Id2": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Project Roles and Technologies": {
+      "main": [
+        [
+          {
+            "node": "Answer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1299d7cf-d9da-40a2-a5f1-e36915630849",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b81cb0b3bf8069b0d16cf6894dc892ec2f8d9fec00803e5c7e21c0a3d400d5a7"
+  },
+  "id": "htK2542KJhvsG0wO",
+  "tags": []
+}
